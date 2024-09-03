@@ -1,0 +1,19 @@
+@import 'variables.scss';
+
+.body {
+    background-color: $tx-tint;
+    height: 100vh;
+    font-family: 'Messina', Arial, Helvetica, sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.logo_img {
+    position: absolute;
+    left: 14px;
+    bottom: 30px;
+    width: 230px;
+    height: 103px;
+}
