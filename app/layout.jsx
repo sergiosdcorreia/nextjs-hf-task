@@ -1,4 +1,4 @@
-import "./SASS/globals.scss";
+import "./styles/globals.scss";
 
 export const metadata = {
   title: "TXo",

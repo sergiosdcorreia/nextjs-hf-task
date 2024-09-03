@@ -1,16 +1,12 @@
-import Image from "next/image";
+import Header from "./components/header";
 
 export default function Home() {
   return (
     <main>
-			<Image
-				className="logo_img"
-				src="/txo_logo_2.svg"
-				alt="TXO Logo"
-				width={600}
-				height={266}
-				priority
-			/>
+			<Header />
+			<div className="container">
+				<h1>We're hands-on and commited to evolving your business to strive for better.</h1>
+			</div>
     </main>
   );
 }
