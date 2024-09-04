@@ -6,7 +6,7 @@ export default function Home() {
 			<section className="section-container">
 				<h1 className="heading-1">We're hands-on and commited to evolving your business to strive for better.</h1>
         <aside className="offerings">
-          <h2 className="offerings_heading-2">Our offering</h2>
+          <h2 className="offerings_title">Our offering</h2>
           <p className="offerings_body">We provide physical, pragmatic and personal business guidance. Success is never static. Neither are we. We'll be your business partners for positive change.</p>
         </aside>
 			</section>
@@ -23,8 +23,24 @@ export default function Home() {
             <p>Name: Sample Title</p>
             <p>Availability: [Now]</p>
           </div>
+          <div className="carousel_description">
+            <button className="carousel_btn">Read More</button>
+
+          </div>
         </div>
 			</section>
+      <section className="newsletter-section">
+        <h2 className="newsletter_title">
+          Stay Updated
+        </h2>
+        <h3>Newsletter</h3>
+        <form>
+          <input type="text" placeholder="Full Name" />
+          <input type="text" placeholder="Company Name" />
+          <input type="email" placeholder="Email Address" />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
   );
 }
