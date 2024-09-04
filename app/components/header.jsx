@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 export default function Header() {
 
-  const parallaxRef = useRef(null);
+  const sectionRef = useRef(null);
   const menu = useRef(null);
   const logo = useRef(null);
 
@@ -17,7 +17,7 @@ export default function Header() {
       var tl = gsap.timeline({
         defaults: { duration: 1 },
         scrollTrigger: {
-          trigger: parallaxRef.current,
+          trigger: sectionRef.current,
           start: "top top",
           end: "bottom bottom",
           scrub: true,
@@ -46,7 +46,7 @@ export default function Header() {
   }, []);
 
   return (
-    <main className="container">
+    <header className="header">
       <Image
         ref={logo}
         className="logo_img"
@@ -56,9 +56,18 @@ export default function Header() {
         height={266}
         priority
       />
-      <section className="header">
-        <h1 ref={menu} className="menu">Menu</h1>
-      </section>
-    </main>
+      <div className="topbar">
+        <label ref={menu} className="hamburger-menu">
+          <input type="checkbox" />
+        </label>
+        <aside className="sidebar">
+          <nav className="nav">
+            <div>ENQUIRES</div>
+            <div>ADDRESS</div>
+            <div>CONNECT</div>
+          </nav>
+        </aside>
+      </div>
+    </header>
   );
 }

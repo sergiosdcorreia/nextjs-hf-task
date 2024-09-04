@@ -8,27 +8,3 @@
 .container {
     height: 100vh;
 }
-
-.header {
-    position: fixed;
-    background-color: $tx-tint;
-    height: 63px;
-    width: 100%;
-    padding: 14px;
-    z-index: 10;
-}
-
-.logo_img {
-    position: absolute;
-    left: 14px;
-    bottom: 30px;
-    width: 230px;
-    height: 103px;
-    z-index: 20;
-}
-
-.menu {
-    opacity: 0;
-    display: flex;
-    justify-content: end;
-}

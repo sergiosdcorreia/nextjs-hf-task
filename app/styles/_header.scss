@@ -1,0 +1,96 @@
+@import 'variables.scss';
+
+.header {
+  height: 100vh;
+}
+
+.logo_img {
+  position: absolute;
+  left: 14px;
+  bottom: 30px;
+  width: 230px;
+  height: 103px;
+  z-index: 2;
+}
+
+.topbar {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  background-color: $tx-tint;
+  height: 63px;
+  width: 100%;
+  z-index: 1;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: 30px;
+  user-select: none;
+  transform-origin: left center;
+  cursor: pointer;
+  z-index: 20;
+
+  &::before, &::after, input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: $tx-brown;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
+  }
+
+  &:has(input:focus-visible)::before,
+  &:has(input:focus-visible)::after,
+  input:focus-visible {
+    border:1px solid $tx-brown;
+  }
+
+  &:has(input:checked)::before {
+    rotate: 45deg;
+    translate: 0 10.5px;
+  }
+
+  &:has(input:checked)::after {
+    rotate: -45deg;
+    translate: 0 -11.5px;
+  }
+
+  &:has(input:checked) + .sidebar {
+    translate: 0;
+  }
+
+  input {
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+    padding: 0;
+    margin: 0;
+
+    &:checked {
+      opacity: 0;
+      width: 0;
+    }
+  }
+}
+
+.sidebar {
+  transition: translate var(--animation-timing);
+  translate: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: $tx-tint;
+  z-index: 10;
+
+  .nav {
+    padding: 16px;
+  }
+}
