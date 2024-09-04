@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -12,7 +12,6 @@ export default function Header() {
   const logoRef = useRef(null);
   const logoSidebarRef = useRef(null);
   const checkboxRef = useRef(null);
-  const [isScrollEnabled, setIsScrollEnabled] = useState(true);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -23,11 +22,9 @@ export default function Header() {
           trigger: headerRef.current,
           start: "top 0",
           end: 'bottom 1800',
-          // end: `bottom ${window.innerHeight / 2}`,
           scrub: true,
-          // pin: true,
+          pin: true,
           onLeave: () => {
-            // Enable the checkbox when leaving the trigger (when scrolling down completely)
             if (checkboxRef.current) {
               checkboxRef.current.disabled = false;
               logoRef.current.style.display = 'none';
@@ -36,7 +33,6 @@ export default function Header() {
             }
           },
           onEnterBack: () => {
-            // Disable the checkbox when re-entering the trigger (when scrolling back up)
             if (checkboxRef.current) {
               checkboxRef.current.disabled = true;
               logoRef.current.style.display = '';
@@ -62,11 +58,6 @@ export default function Header() {
         },
         0
       );
-      if (!isScrollEnabled) {
-        tl.scrollTrigger.disable();
-      } else {
-        tl.scrollTrigger.enable();
-      }
     });
     return () => {
       ctx.revert();
@@ -76,11 +67,10 @@ export default function Header() {
       document.body.style.overflow = '';
       menuRef.current.style.opacity = '';
     };
-  }, [isScrollEnabled]);
+  }, []);
 
   const handleCheckboxChange = () => {
     const isChecked = checkboxRef.current.checked;
-    setIsScrollEnabled(!isChecked);
 
     if (isChecked && menuRef.current) {
       document.body.style.overflow = 'hidden';
