@@ -20,12 +20,13 @@ export default function Home() {
             height={1176}
           />
           <div className="carousel_subtitle">
-            <p>Name: Sample Title</p>
-            <p>Availability: [Now]</p>
-          </div>
-          <div className="carousel_description">
+            <aside className="carousel_text-visible">
+              <p>Name: Sample Title</p>
+              <p>Availability: [Now]</p>
+            </aside>
+            <aside>
+            </aside>
             <button className="carousel_btn">Read More</button>
-
           </div>
         </div>
 			</section>
@@ -33,12 +34,12 @@ export default function Home() {
         <h2 className="newsletter_title">
           Stay Updated
         </h2>
-        <h3>Newsletter</h3>
-        <form>
-          <input type="text" placeholder="Full Name" />
-          <input type="text" placeholder="Company Name" />
-          <input type="email" placeholder="Email Address" />
-          <button type="submit">Submit</button>
+        <h3 className="newsletter_subtitle">Newsletter</h3>
+        <form className="newsletter_form">
+          <input className="newsletter_name" type="text" placeholder="Full Name" />
+          <input className="newsletter_company" type="text" placeholder="Company Name" />
+          <input className="newsletter_email" type="email" placeholder="Email Address" />
+          <button className="newsletter_btn" type="submit">Submit</button>
         </form>
       </section>
     </main>

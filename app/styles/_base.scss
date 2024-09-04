@@ -48,26 +48,85 @@
         }
 
         .carousel_subtitle {
-            display: flex;
-            border-bottom: 1px solid $tx-brown;
             padding: 14px 0;
 
-            p {
-                font-family: "Messina", Arial, Helvetica, sans-serif;
-                font-size: 10px;
-                line-height: 13px;
-                width: 50%;
+            .carousel_text-visible {
+                display: flex;
+                border-bottom: 1px solid $tx-brown;
+                padding-bottom: 14px;
+
+                p {
+                    font-family: "Messina", Arial, Helvetica, sans-serif;
+                    font-size: 10px;
+                    line-height: 13px;
+                    width: 50%;
+                }
             }
+        }
+
+        .carousel_btn {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            line-height: 18px;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            color: $tx-brown;
+            opacity: .3;
         }
     }
 }
 
 .newsletter-section {
+    padding: 72px 14px 0 14px;
+
     .newsletter_title {
         font-family: "Messina", Arial, Helvetica, sans-serif;
         font-size: 10px;
         line-height: 18px;
         color: $tx-brown;
         text-transform: uppercase;
+    }
+    .newsletter_subtitle {
+        font-family: "Messina", Arial, Helvetica, sans-serif;
+        font-size: 49px;
+        line-height: 47px;
+        color: $tx-brown;
+    }
+
+    .newsletter_form {
+
+        .newsletter_name, .newsletter_company, .newsletter_email {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 49px;
+            line-height: 40px;
+            color: $tx-brown;
+            border: none;
+            background-color: transparent;
+            height: 49px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .newsletter_name::placeholder, .newsletter_company::placeholder, .newsletter_email::placeholder {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 49px;
+            line-height: 47px;
+            color: $tx-brown;
+            opacity: .3;
+        }
+
+        .newsletter_btn {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 19px;
+            color: $tx-brown;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            margin-top: 30px;
+            
+        }
     }
 }
