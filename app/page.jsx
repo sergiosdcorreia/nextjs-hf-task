@@ -7,7 +7,7 @@ export default function Home() {
 				<h1 className="heading-1">We're hands-on and commited to evolving your business to strive for better.</h1>
         <aside className="offerings">
           <h2 className="offerings_heading-2">Our offering</h2>
-          <p className="offerings_text">We provide physical, pragmatic and personal business guidance. Success is never static. Neither are we. We'll be your business partners for positive change.</p>
+          <p className="offerings_body">We provide physical, pragmatic and personal business guidance. Success is never static. Neither are we. We'll be your business partners for positive change.</p>
         </aside>
 			</section>
       <section className="carousel-section">

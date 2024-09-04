@@ -22,7 +22,7 @@ export default function Header() {
         scrollTrigger: {
           trigger: headerRef.current,
           start: "top 0",
-          end: 'bottom 2000',
+          end: 'bottom 1800',
           // end: `bottom ${window.innerHeight / 2}`,
           scrub: true,
           // pin: true,
@@ -115,9 +115,44 @@ export default function Header() {
         </label>
         <aside className="sidebar">
           <nav className="nav">
-            <div>ENQUIRES</div>
-            <div>ADDRESS</div>
-            <div>CONNECT</div>
+            <div className="nav_section">
+              <p className="nav_title">Enquires</p>
+              <div className="nav_content">
+                <p className="nav_subtitle">General</p>
+                <a className="nav_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                <a className="nav_email" href="mailto:info@txowork.com">info@txowork.com</a>
+              </div>
+              <div className="nav_content">
+                <p className="nav_subtitle-sm">Sales</p>
+                <a className="nav_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                <a className="nav_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
+              </div>
+            </div>
+            <div className="nav_section">
+              <p className="nav_title">Address</p>
+              <div className="nav_content">
+                <p className="nav_subtitle">
+                  Morelands<br />
+                  5-23 Old Street<br />
+                  London EC1V 9HL
+                </p>
+              </div>
+            </div>
+            <div className="nav_section">
+              <p className="nav_title">Connect</p>
+              <div className="nav_content">
+                <a className="nav_link" href="#" target="_blank">
+                  Instagram
+                </a>
+                <a className="nav_link" href="#" target="_blank">
+                  LinkedIn
+                </a>
+                <a className="nav_link" href="#" target="_blank">
+                  Facebook
+                </a>
+              </div>
+              <div className="nav_border"></div>
+            </div>
           </nav>
         </aside>
       </div>

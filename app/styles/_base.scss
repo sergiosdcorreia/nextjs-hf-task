@@ -20,7 +20,6 @@
     }
 
     .offerings {
-        padding: 0 14px;
 
         .offerings_heading-2 {
             font-family: "Messina", Arial, Helvetica, sans-serif;
@@ -28,6 +27,13 @@
             line-height: 18px;
             color: $tx-brown;
             text-transform: uppercase;
+        }
+
+        .offerings_body {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            line-height: 19px;
+            color: $tx-brown;
         }
     }
 }
