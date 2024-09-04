@@ -6,6 +6,9 @@ export default function Home() {
 			<div className="container">
 				<h1>Were hands-on and commited to evolving your business to strive for better.</h1>
 			</div>
+      <div className="container">
+				<h1>Were hands-on and commited to evolving your business to strive for better.</h1>
+			</div>
     </main>
   );
 }
