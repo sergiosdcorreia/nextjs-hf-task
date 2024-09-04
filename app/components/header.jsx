@@ -95,7 +95,7 @@ export default function Header() {
       <Image
         ref={logoRef}
         className="logo_img"
-        src="/txo_logo_2.svg"
+        src="/images/txo_logo_2.svg"
         alt="TXo Logo"
         width={600}
         height={266}
@@ -105,11 +105,10 @@ export default function Header() {
         <Image
           ref={logoSidebarRef}
           className="logo_img_sidebar"
-          src="/txo_logo_2.svg"
+          src="/images/txo_logo_2.svg"
           alt="TXo Logo"
           width={80}
           height={36}
-          priority
         />
         <label ref={menuRef} className="hamburger-menu">
           <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
