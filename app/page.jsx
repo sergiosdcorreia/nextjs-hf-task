@@ -36,9 +36,9 @@ export default function Home() {
         </h2>
         <h3 className="newsletter_subtitle">Newsletter</h3>
         <form className="newsletter_form">
-          <input className="newsletter_name" type="text" placeholder="Full Name" />
-          <input className="newsletter_company" type="text" placeholder="Company Name" />
-          <input className="newsletter_email" type="email" placeholder="Email Address" />
+          <input className="newsletter_name" type="text" name="Full Name" placeholder="Full Name" />
+          <input className="newsletter_company" type="text" name="Company Name" placeholder="Company Name" />
+          <input className="newsletter_email" type="email" name="Email Address" placeholder="Email Address" />
           <button className="newsletter_btn" type="submit">Submit</button>
         </form>
       </section>
