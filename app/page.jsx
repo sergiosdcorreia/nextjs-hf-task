@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Carousel from "./components/carousel";
 
 export default function Home() {
   return (
@@ -10,26 +10,7 @@ export default function Home() {
           <p className="offerings_body">We provide physical, pragmatic and personal business guidance. Success is never static. Neither are we. We&apos;ll be your business partners for positive change.</p>
         </aside>
 			</section>
-      <section className="carousel-section">
-				<div className="carousel-container">
-          <Image
-            className="carousel_img"
-            src="/images/c1.jpg"
-            alt="Sample title"
-            width={1940}
-            height={1176}
-          />
-          <div className="carousel_subtitle">
-            <aside className="carousel_text-visible">
-              <p>Name: Sample Title</p>
-              <p>Availability: [Now]</p>
-            </aside>
-            <aside>
-            </aside>
-            <button className="carousel_btn">Read More</button>
-          </div>
-        </div>
-			</section>
+      <Carousel />
       <section className="newsletter-section">
         <h2 className="newsletter_title">
           Stay Updated

@@ -39,45 +39,6 @@
     }
 }
 
-.carousel-section {
-    padding: 50px 14px 0 14px;
-
-    .carousel-container {
-        .carousel_img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel_subtitle {
-            padding: 14px 0;
-
-            .carousel_text-visible {
-                display: flex;
-                border-bottom: 1px solid $tx-brown;
-                padding-bottom: 14px;
-
-                p {
-                    font-family: "Messina", Arial, Helvetica, sans-serif;
-                    font-size: 10px;
-                    line-height: 13px;
-                    width: 50%;
-                }
-            }
-        }
-
-        .carousel_btn {
-            font-family: "Messina", Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            line-height: 18px;
-            border: none;
-            background-color: transparent;
-            padding: 0;
-            color: $tx-brown;
-            opacity: .3;
-        }
-    }
-}
-
 .newsletter-section {
     padding: 72px 14px 0 14px;
 

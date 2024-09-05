@@ -1,0 +1,26 @@
+[
+  {
+    "image": "/images/c1.jpg",
+    "title": "Sample Title 1",
+    "availability": "Now",
+    "location": "Soho",
+    "size": "4200 sqft",
+    "description": "Lorem Ipsum 1"
+  },
+  {
+    "image": "/images/c2.jpeg",
+    "title": "Sample Title 2",
+    "availability": "Later",
+    "location": "Brooklyn",
+    "size": "3500 sqft",
+    "description": "Lorem Ipsum 2"
+  },
+  {
+    "image": "/images/c3.jpeg",
+    "title": "Sample Title 3",
+    "availability": "Soon",
+    "location": "Manhattan",
+    "size": "5000 sqft",
+    "description": "Lorem Ipsum 3"
+  }
+]
