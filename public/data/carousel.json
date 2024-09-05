@@ -1,26 +1,42 @@
 [
   {
     "image": "/images/c1.jpg",
-    "title": "Sample Title 1",
+    "title": "Sample Title",
     "availability": "Now",
-    "location": "Soho",
-    "size": "4200 sqft",
-    "description": "Lorem Ipsum 1"
+    "location": "[Soho]",
+    "size": "[4200] sqft",
+    "description": "Quam eos premqui tem cupta il inimet as rerum rent volum sitibus idunt la consenis ea nos doluptur, ipsapernates praeperrunte nobist peditaquis eum audaecto quam, susa consecae isto eum fugit."
   },
   {
     "image": "/images/c2.jpeg",
     "title": "Sample Title 2",
     "availability": "Later",
-    "location": "Brooklyn",
-    "size": "3500 sqft",
-    "description": "Lorem Ipsum 2"
+    "location": "[Manchester]",
+    "size": "[3500] sqft",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
   },
   {
     "image": "/images/c3.jpeg",
     "title": "Sample Title 3",
     "availability": "Soon",
-    "location": "Manhattan",
-    "size": "5000 sqft",
-    "description": "Lorem Ipsum 3"
+    "location": "[Bristol]",
+    "size": "[5000] sqft",
+    "description": "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem."
+  },
+  {
+    "image": "/images/c4.jpeg",
+    "title": "Sample Title 4",
+    "availability": "Tomorrow",
+    "location": "[London]",
+    "size": "[4700] sqft",
+    "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  {
+    "image": "/images/c5.jpeg",
+    "title": "Sample Title 5",
+    "availability": "Yesterday",
+    "location": "[Exeter]",
+    "size": "[4700] sqft",
+    "description": "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga."
   }
 ]

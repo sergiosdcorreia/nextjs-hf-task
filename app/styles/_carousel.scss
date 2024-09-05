@@ -10,26 +10,13 @@
     }
 
     .carousel_action-btns {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      z-index: 5;
-
-      .carousel_btn-prev, .carousel_btn-next {
-        width: 50%;
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-      }
+      display: none;
     }
-
 
     .carousel_subtitle {
       position: relative;
       padding: 14px 0;
-      z-index: 10;
+      z-index: 4;
 
       .carousel_text-visible {
         display: flex;
@@ -40,8 +27,41 @@
           font-family: "Messina", Arial, Helvetica, sans-serif;
           font-size: 10px;
           line-height: 13px;
+          color: $tx-brown;
           width: 50%;
         }
+      }
+
+      .carousel_accordion {
+        overflow-y: hidden;
+        height: auto;
+        transition: height 500ms;
+
+        .carousel_accordion_row {
+          display: flex;
+          border-bottom: 1px solid $tx-brown;
+          padding: 14px 0;
+
+          p {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            line-height: 13px;
+            color: $tx-brown;
+            width: 50%;
+          }
+        }
+
+        .carousel_accordion_description {
+          border-bottom: 1px solid $tx-brown;
+          padding: 14px 0;
+          p {
+            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            line-height: 13px;
+            color: $tx-brown;
+          }
+        }
+
       }
     }
 
@@ -54,6 +74,38 @@
       padding: 0;
       color: $tx-brown;
       opacity: .3;
+    }
+  }
+}
+
+
+@media only screen and (min-width: 960px) {
+  .carousel_action-btns {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    z-index: 3;
+
+    .carousel_btn-prev, .carousel_btn-next {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+      z-index: 1000;
+    }
+
+    .carousel_btn-prev {
+      cursor: url('/images/PREV.png'), auto;
+      left: 0;
+    }
+
+    .carousel_btn-next {
+      cursor: url('/images/NEXT.png'), auto;
+      right: 0;
     }
   }
 }

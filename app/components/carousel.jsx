@@ -8,8 +8,10 @@ import 'swiper/scss';
 export default function Carousel() {
   const [data, setData] = useState([]);
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isShowing, setIsShowing] = useState(false);
   const [loading, setLoading] = useState(true);
   const swiperRef = useRef(null);
+  const accordionRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +28,10 @@ export default function Carousel() {
     fetchData();
   }, []);
 
+  const toggleReadMore = () => {
+    setIsShowing(!isShowing);
+  }
+
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev(); // Go to previous slide
@@ -41,8 +47,7 @@ export default function Carousel() {
   if (!data || data.length === 0) {
     return <div>Loading...</div>;
   }
-
-
+  
   return (
     <section className="carousel-section">
       <div className="carousel-container">
@@ -66,24 +71,34 @@ export default function Carousel() {
             </SwiperSlide>
           ))}
           <div className="carousel_action-btns">
-            <button className="carousel_btn-prev" onClick={handlePrevClick}></button>
-            <button className="carousel_btn-next" onClick={handleNextClick}></button>
+          <button
+              className="carousel_btn-prev"
+              onClick={handlePrevClick}
+            ></button>
+            <button
+              className="carousel_btn-next"
+              onClick={handleNextClick}
+            ></button>
           </div>
         </Swiper>
-        <div className="carousel_subtitle">
-          <aside className="carousel_text-visible">
+        <aside className="carousel_subtitle">
+          <div className="carousel_text-visible">
             <p>Name: {data[activeSlide].title}</p>
             <p>Availability: {data[activeSlide].availability}</p>
-          </aside>
-          <div>
-            <p>Location: {data[activeSlide].location}</p>
-            <p>Size: {data[activeSlide].size}</p>
           </div>
-          <div>
-            <p>{data[activeSlide].description}</p>
+          <div style={{ height: isShowing ? accordionRef.current?.offsetHeight || 0 : "0" }} className="carousel_accordion">
+            <div ref={accordionRef}>
+              <div className="carousel_accordion_row">
+                <p>Location: {data[activeSlide].location}</p>
+                <p>Size: {data[activeSlide].size}</p>
+              </div>
+              <div className="carousel_accordion_description">
+                <p>{data[activeSlide].description}</p>
+              </div>
+            </div>
           </div>
-          <button className="carousel_btn-read-more">Read More</button>
-        </div>
+          <button className="carousel_btn-read-more" type="button" onClick={toggleReadMore}>{isShowing ? 'Hide Text' : 'Read More'}</button>
+        </aside>
       </div>
     </section>
   )

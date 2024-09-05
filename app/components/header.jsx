@@ -21,7 +21,7 @@ export default function Header() {
         scrollTrigger: {
           trigger: headerRef.current,
           start: "top 0",
-          end: 'bottom 1800',
+          end: 'bottom 1400',
           scrub: true,
           pin: true,
           onLeave: () => {
