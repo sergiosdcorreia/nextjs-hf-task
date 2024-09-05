@@ -110,7 +110,7 @@
       padding: 14px 0;
 
       .nav_title {
-        font-family: "Messina", Arial, Helvetica, sans-serif;
+        font-family: "Messina", sans-serif;
         font-size: 10px;
         line-height: 18px;
         color: $tx-brown;
@@ -121,14 +121,14 @@
         padding-top: 14px;
 
         .nav_subtitle, .nav_phone, .nav_email, .nav_link {
-          font-family: "Messina", Arial, Helvetica, sans-serif;
+          font-family: "Messina", sans-serif;
           font-size: 17px;
           line-height: 19px;
           color: $tx-brown;
         }
 
         .nav_subtitle-sm, .nav_phone-sm, .nav_email-sm {
-          font-family: "Messina", Arial, Helvetica, sans-serif;
+          font-family: "Messina", sans-serif;
           font-size: 15px;
           line-height: 16px;
           color: $tx-brown;
