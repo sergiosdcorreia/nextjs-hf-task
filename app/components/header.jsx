@@ -105,15 +105,15 @@ export default function Header() {
         </label>
         <aside className="sidebar">
           <nav className="nav">
-            <div className="nav_section flex">
-              <div className="nav_divider">
-                <p className="nav_title">Enquires</p>
-                <div className="nav_content">
-                  <p className="nav_subtitle">General</p>
-                  <a className="nav_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-                  <a className="nav_email" href="mailto:info@txowork.com">info@txowork.com</a>
-                </div>
+            <div className="nav_section">
+              <p className="nav_title">Enquires</p>
+              <div className="nav_content">
+                <p className="nav_subtitle">General</p>
+                <a className="nav_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                <a className="nav_email" href="mailto:info@txowork.com">info@txowork.com</a>
               </div>
+            </div>
+            <div className="nav_section nav_section-sm">
               <div className="nav_content nav_content-sm">
                 <p className="nav_subtitle-sm">Sales</p>
                 <a className="nav_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
