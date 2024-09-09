@@ -1,9 +1,9 @@
 "use client"
 
 import { useRef, useEffect } from 'react';
-import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from 'next/image';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import throttle from 'lodash/throttle';
 
 export default function Header() {
@@ -38,7 +38,7 @@ export default function Header() {
         defaults: { duration: 1 },
         scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 0",
+          start: 'top 0',
           end: 'bottom 1400',
           scrub: true,
           pin: true,
@@ -62,10 +62,10 @@ export default function Header() {
       timelineRef.current.to(
         logoRef.current,
         {
-          top: "14px",
-          width: "80px",
-          height: "36px",
-          position: "fixed"
+          top: '14px',
+          width: '80px',
+          height: '36px',
+          position: 'fixed'
         },
         0
       );
@@ -78,10 +78,10 @@ export default function Header() {
       );
     });
 
-    menuRef.current.addEventListener("change", handleChange);
+    menuRef.current.addEventListener('change', handleChange);
     return () => {
       ctx.revert();
-      menuRef.current.removeEventListener("change", handleChange);
+      menuRef.current.removeEventListener('change', handleChange);
       menuRef.current.style.opacity = '';
     };
   }, []);
