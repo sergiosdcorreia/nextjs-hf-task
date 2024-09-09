@@ -4,6 +4,7 @@ import { useRef, useEffect } from 'react';
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import throttle from 'lodash/throttle';
 
 export default function Header() {
 
@@ -12,11 +13,28 @@ export default function Header() {
   const logoRef = useRef(null);
   const logoSidebarRef = useRef(null);
   const checkboxRef = useRef(null);
+  const handleChange = () => handleCheckboxChange();
+  const timelineRef = useRef(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
-      var tl = gsap.timeline({
+
+      const handleMenuEnabling = () => {
+        // Get hamburger opacity on mobile
+        const currentOpacity = parseFloat(window.getComputedStyle(menuRef.current).opacity);
+
+        // Enable hamburger functionality when opacity is equal or greater than 10%
+        if (currentOpacity >= 0.1) {
+          checkboxRef.current.disabled = false;
+        } else {
+          checkboxRef.current.disabled = true;
+        }
+      };
+
+      const handleMenuEnablingWithThrottle = throttle(handleMenuEnabling, 100);
+
+      timelineRef.current = gsap.timeline({
         defaults: { duration: 1 },
         scrollTrigger: {
           trigger: headerRef.current,
@@ -24,24 +42,24 @@ export default function Header() {
           end: 'bottom 1400',
           scrub: true,
           pin: true,
+          onUpdate: handleMenuEnablingWithThrottle,
           onLeave: () => {
             if (checkboxRef.current) {
-              checkboxRef.current.disabled = false;
-              logoRef.current.style.display = 'none';
-              logoSidebarRef.current.style.display = 'block';
+              logoRef.current.style.opacity = '0';
               menuRef.current.style.opacity = '1';
+              logoSidebarRef.current.style.opacity = '1';
             }
           },
           onEnterBack: () => {
             if (checkboxRef.current) {
-              checkboxRef.current.disabled = true;
-              logoRef.current.style.display = '';
-              logoSidebarRef.current.style.display = 'none';
+              logoRef.current.style.opacity = '1';
+              menuRef.current.style.opacity = '';
+              logoSidebarRef.current.style.opacity = '0';
             }
           }
         },
       });
-      tl.to(
+      timelineRef.current.to(
         logoRef.current,
         {
           top: "14px",
@@ -51,7 +69,7 @@ export default function Header() {
         },
         0
       );
-      tl.to(
+      timelineRef.current.to(
         menuRef.current,
         {
             opacity: 1
@@ -59,12 +77,11 @@ export default function Header() {
         0
       );
     });
+
+    menuRef.current.addEventListener("change", handleChange);
     return () => {
       ctx.revert();
-      if (checkboxRef.current) {
-        checkboxRef.current.removeEventListener("change", () => {});
-      };
-      document.body.style.overflow = '';
+      menuRef.current.removeEventListener("change", handleChange);
       menuRef.current.style.opacity = '';
     };
   }, []);
@@ -73,9 +90,24 @@ export default function Header() {
     const isChecked = checkboxRef.current.checked;
 
     if (isChecked && menuRef.current) {
+      // Prevents the user from scrolling when the menu is open
       document.body.style.overflow = 'hidden';
+      // Ensures the close button is visible
       menuRef.current.style.opacity = '1';
+      // Hide the logoRef
+      logoRef.current.style.opacity = '0';
+      // Show the logoSidebarRef
+      logoSidebarRef.current.style.opacity = '1';
+
+    } else if (!isChecked && timelineRef.current) {
+      // Hide logoSidebarRef
+      logoSidebarRef.current.style.opacity = '0';
+      // Show the logoRef again
+      logoRef.current.style.opacity = '1';
+      // Enable scrolling
+      document.body.style.overflow = '';
     } else {
+      // Enable scrolling
       document.body.style.overflow = '';
     }
   };

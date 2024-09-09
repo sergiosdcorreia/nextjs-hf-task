@@ -8,6 +8,7 @@
 }
 
 .logo_img {
+  transition: opacity var(--animation-timing);
   position: absolute;
   left: 14px;
   top: auto;
@@ -82,8 +83,9 @@
 }
 
 .logo_img_sidebar {
+  transition: opacity var(--animation-timing);
   position: absolute;
-  display: none;
+  opacity: 0;
   left: 14px;
   top: 14px;
   width: 80px;
