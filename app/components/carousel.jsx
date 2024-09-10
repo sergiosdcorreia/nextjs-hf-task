@@ -3,6 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import gsap from 'gsap';
 import 'swiper/scss';
 
 export default function Carousel() {
@@ -10,8 +11,16 @@ export default function Carousel() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isShowing, setIsShowing] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [isPrevHovered, setIsPrevHovered] = useState(false);
+  const [isNextHovered, setIsNextHovered] = useState(false);
   const swiperRef = useRef(null);
   const accordionRef = useRef(null);
+  const mouseRef = useRef({
+    x: 0,
+    y: 0
+  });
+  const textRef = useRef();
+  const text2Ref = useRef();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +35,30 @@ export default function Carousel() {
       }
     };
     fetchData();
+
+    const manageMouseMove = (e) => {
+      const { clientX, clientY } = e;
+
+      mouseRef.current = {
+        x: clientX,
+        y: clientY
+      }
+      moveText(mouseRef.current.x, mouseRef.current.y)
+    };
+
+    const moveText = (x, y) => {
+      gsap.set(textRef.current, {x, y, xPercent: -50, yPercent: -50})
+      gsap.set(text2Ref.current, {x, y, xPercent: -50, yPercent: -50})
+    };
+
+    let ctx = gsap.context(() => {
+      window.addEventListener("mousemove", manageMouseMove);
+    })
+
+    return () => {
+      ctx.revert();
+      window.removeEventListener("mousemove", manageMouseMove)
+    }
   }, []);
 
   const toggleReadMore = () => {
@@ -47,9 +80,11 @@ export default function Carousel() {
   if (!data || data.length === 0) {
     return <div>Loading...</div>;
   }
-  
+
   return (
     <section className="carousel-section">
+      <div ref={textRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
+      <div ref={text2Ref} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
       <div className="carousel-container">
         <Swiper
           ref={swiperRef}
@@ -71,11 +106,15 @@ export default function Carousel() {
             </SwiperSlide>
           ))}
           <div className="carousel_action-btns">
-          <button
+            <button
+              onMouseEnter={() => {setIsPrevHovered(true)}}
+              onMouseLeave={() => {setIsPrevHovered(false)}}
               className="carousel_btn-prev"
               onClick={handlePrevClick}
             ></button>
             <button
+              onMouseEnter={() => {setIsNextHovered(true)}}
+              onMouseLeave={() => {setIsNextHovered(false)}}
               className="carousel_btn-next"
               onClick={handleNextClick}
             ></button>

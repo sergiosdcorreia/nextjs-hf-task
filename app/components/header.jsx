@@ -34,55 +34,66 @@ export default function Header() {
 
       const handleMenuEnablingWithThrottle = throttle(handleMenuEnabling, 100);
 
-      timelineRef.current = gsap.timeline({
-        defaults: { duration: 1 },
-        scrollTrigger: {
-          trigger: headerRef.current,
-          start: 'top 0',
-          end: 'bottom 1400',
-          scrub: true,
-          pin: true,
-          onUpdate: handleMenuEnablingWithThrottle,
-          onLeave: () => {
-            if (checkboxRef.current) {
-              logoRef.current.style.opacity = '0';
-              menuRef.current.style.opacity = '1';
-              logoSidebarRef.current.style.opacity = '1';
+      let mediaQueries = gsap.matchMedia();
+
+      mediaQueries.add({
+        isMobile: "(max-width: 959px)",
+        isDesktop: "(min-width: 960px)"
+      }, (context) => {
+        let { isMobile, isDesktop } = context.conditions;
+
+        timelineRef.current = gsap.timeline({
+          defaults: { duration: 1 },
+          scrollTrigger: {
+            trigger: headerRef.current,
+            start: 'top 0',
+            end: isMobile ? 'bottom 100' : 'bottom 100',
+            scrub: true,
+            pin: false,
+            onUpdate: handleMenuEnablingWithThrottle,
+            onLeave: () => {
+              if (checkboxRef.current) {
+                logoRef.current.style.opacity = '0';
+                menuRef.current.style.opacity = '1';
+                logoSidebarRef.current.style.opacity = '1';
+              }
+            },
+            onEnterBack: () => {
+              if (checkboxRef.current) {
+                logoRef.current.style.opacity = '1';
+                menuRef.current.style.opacity = '';
+                logoSidebarRef.current.style.opacity = '0';
+              }
             }
           },
-          onEnterBack: () => {
-            if (checkboxRef.current) {
-              logoRef.current.style.opacity = '1';
-              menuRef.current.style.opacity = '';
-              logoSidebarRef.current.style.opacity = '0';
-            }
-          }
-        },
-      });
-      timelineRef.current.to(
-        logoRef.current,
-        {
-          top: '14px',
-          width: '80px',
-          height: '36px',
-          position: 'fixed'
-        },
-        0
-      );
-      timelineRef.current.to(
-        menuRef.current,
-        {
-            opacity: 1
-        },
-        0
-      );
+        });
+        timelineRef.current.to(
+          logoRef.current,
+          {
+            top: isMobile ? '14px' : '40px',
+            width: isMobile ? '80px' : '168px',
+            height: isMobile ? '36px' : '75px',
+            position: 'fixed'
+          },
+          0
+        );
+        timelineRef.current.to(
+          menuRef.current,
+          {
+              opacity: 1
+          },
+          0
+        );
+      })
     });
 
     menuRef.current.addEventListener('change', handleChange);
     return () => {
       ctx.revert();
-      menuRef.current.removeEventListener('change', handleChange);
-      menuRef.current.style.opacity = '';
+      if (menuRef.current) {
+        menuRef.current.removeEventListener('change', handleChange);
+        menuRef.current.style.opacity = '';
+      }
     };
   }, []);
 
@@ -113,7 +124,7 @@ export default function Header() {
   };
 
   return (
-    <header className="header">
+    <header ref={headerRef} className="header">
       <Image
         ref={logoRef}
         className="logo_img"

@@ -83,6 +83,44 @@
   .carousel-section {
     padding: 120px 40px 0 40px;
 
+    .carousel_cursor-prev {
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 180px;
+      height: 60px;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 9999;
+
+      &::before {
+        content: "Previous";
+        font-family: "Messina", sans-serif;
+        font-size: 45px;
+        color: $tx-brown;
+      }
+    }
+
+    .carousel_cursor-next {
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 90px;
+      height: 60px;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      z-index: 9999;
+
+      &::before {
+        content: "Next";
+        font-family: "Messina", sans-serif;
+        font-size: 45px;
+        color: $tx-brown;
+      }
+    }
+
     .carousel-container {
       .carousel_action-btns {
         position: absolute;
@@ -100,15 +138,14 @@
           border: none;
           background-color: transparent;
           z-index: 1000;
+          cursor: none;
         }
 
         .carousel_btn-prev {
-          cursor: url('/images/PREV.png'), auto;
           left: 0;
         }
 
         .carousel_btn-next {
-          cursor: url('/images/NEXT.png'), auto;
           right: 0;
         }
       }
