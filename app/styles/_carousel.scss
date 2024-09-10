@@ -80,32 +80,80 @@
 
 
 @media only screen and (min-width: 960px) {
-  .carousel_action-btns {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    z-index: 3;
+  .carousel-section {
+    padding: 120px 40px 0 40px;
 
-    .carousel_btn-prev, .carousel_btn-next {
-      position: absolute;
-      top: 0;
-      width: 50%;
-      height: 100%;
-      border: none;
-      background-color: transparent;
-      z-index: 1000;
-    }
+    .carousel-container {
+      .carousel_action-btns {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        z-index: 3;
+    
+        .carousel_btn-prev, .carousel_btn-next {
+          position: absolute;
+          top: 0;
+          width: 50%;
+          height: 100%;
+          border: none;
+          background-color: transparent;
+          z-index: 1000;
+        }
+    
+        .carousel_btn-prev {
+          cursor: url('/images/PREV.png'), auto;
+          left: 0;
+        }
+    
+        .carousel_btn-next {
+          cursor: url('/images/NEXT.png'), auto;
+          right: 0;
+        }
+      }
+  
+      .carousel_subtitle {
+        padding: 42px 0;
 
-    .carousel_btn-prev {
-      cursor: url('/images/PREV.png'), auto;
-      left: 0;
-    }
+        .carousel_text-visible {
+          padding-bottom: 24px;
 
-    .carousel_btn-next {
-      cursor: url('/images/NEXT.png'), auto;
-      right: 0;
+          p {
+            font-size: 45px;
+            line-height: 45px;
+          }
+        }
+    
+        .carousel_accordion {
+          .carousel_accordion_row {
+            padding: 24px 0;
+
+            p {
+              font-size: 45px;
+              line-height: 45px;
+            }
+          }
+
+          .carousel_accordion_description {
+            display: flex;
+            justify-content: flex-end;
+            padding: 24px 0;
+
+            p {
+              font-size: 45px;
+              line-height: 45px;
+              width: 50%;
+            }
+          }
+        }
+        .carousel_btn-read-more {
+          font-size: 45px;
+          line-height: 45px;
+          cursor: pointer;
+          margin-top: 42px;
+        }
+      }
     }
   }
 }

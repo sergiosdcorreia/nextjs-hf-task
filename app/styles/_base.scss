@@ -98,28 +98,66 @@
 @media only screen and (min-width: 960px) {
   .section-container {
     padding: 286px 40px 14px 40px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 20px;
 
     .heading-1 {
       font-size: 144px;
       line-height: 138px;
+      grid-column: span 7;
+      letter-spacing: -9px;
     }
 
     .offerings {
       max-width: 862px;
+      grid-column: 4 / 8;
 
       .offerings_title {
-        font-family: "Messina", sans-serif;
-        font-size: 10px;
+        font-size: 20px;
         line-height: 18px;
-        color: $tx-brown;
-        text-transform: uppercase;
       }
 
       .offerings_body {
-        font-family: "Messina", sans-serif;
-        font-size: 17px;
-        line-height: 19px;
-        color: $tx-brown;
+        font-size: 45px;
+        line-height: 45px;
+        margin-top: 24px;
+      }
+    }
+  }
+  .newsletter-section {
+    padding: 250px 40px 0 40px;
+
+    .newsletter_title {
+      font-size: 20px;
+      line-height: 18px;
+    }
+
+    .newsletter_subtitle {
+      font-size: 144px;
+      line-height: 138px;
+      letter-spacing: -9px;
+    }
+
+    .newsletter_form {
+      .newsletter_name, .newsletter_company, .newsletter_email {
+        font-size: 144px;
+        line-height: 138px;
+        letter-spacing: -9px;
+        height: 144px;
+      }
+  
+      .newsletter_name::placeholder, .newsletter_company::placeholder, .newsletter_email::placeholder {
+        font-size: 144px;
+        line-height: 138px;
+        letter-spacing: -9px;
+      }
+  
+      .newsletter_btn {
+        font-size: 45px;
+        line-height: 45px;
+        margin-top: 90px;
+        cursor: pointer;
       }
     }
   }
