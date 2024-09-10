@@ -101,6 +101,7 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 20px;
+    box-sizing: border-box;
 
     .heading-1 {
       font-size: 144px;
@@ -112,6 +113,7 @@
     .offerings {
       max-width: 862px;
       grid-column: 4 / 8;
+      align-self: end;
 
       .offerings_title {
         font-size: 20px;

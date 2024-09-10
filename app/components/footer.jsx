@@ -10,12 +10,10 @@ export default function Footer() {
         width={600}
         height={266}
       />
-      <div className="footer_links">
-        <a href="#" target="_blank">Terms and Conditions</a>
-        <a href="#" target="_blank">Privacy Policy</a>
-        <a href="#" target="_blank">Cookie Policy</a>
-        <a href="#" target="_blank">Accessibility</a>
-      </div>
+      <a href="#" target="_blank">Terms and Conditions</a>
+      <a href="#" target="_blank">Privacy Policy</a>
+      <a href="#" target="_blank">Cookie Policy</a>
+      <a href="#" target="_blank">Accessibility</a>
     </footer>
   );
 }
