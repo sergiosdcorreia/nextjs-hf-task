@@ -1,9 +1,10 @@
 @font-face {
-	font-family: 'Messina';
+	font-family: 'MessinaSansWeb';
 	src:  url('/fonts/MessinaSansWeb-Regular.woff2') format('woff2'),
 				url('/fonts/MessinaSansWeb-Regular.woff') format('woff'),
+				url('/fonts/MessinaSansWeb-Regular.ttf') format('ttf'),
 				url('/fonts/MessinaSansWeb-Regular.eot') format('eot');
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }

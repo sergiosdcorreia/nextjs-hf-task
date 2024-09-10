@@ -24,7 +24,7 @@
         padding-bottom: 14px;
 
         p {
-          font-family: "Messina", Arial, Helvetica, sans-serif;
+          font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
           font-size: 10px;
           line-height: 13px;
           color: $tx-brown;
@@ -43,7 +43,7 @@
           padding: 14px 0;
 
           p {
-            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
             font-size: 10px;
             line-height: 13px;
             color: $tx-brown;
@@ -55,7 +55,7 @@
           border-bottom: 1px solid $tx-brown;
           padding: 14px 0;
           p {
-            font-family: "Messina", Arial, Helvetica, sans-serif;
+            font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
             font-size: 10px;
             line-height: 13px;
             color: $tx-brown;
@@ -66,7 +66,7 @@
     }
 
     .carousel_btn-read-more {
-      font-family: "Messina", Arial, Helvetica, sans-serif;
+      font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
       font-size: 10px;
       line-height: 18px;
       border: none;
@@ -91,7 +91,7 @@
         width: 100%;
         display: flex;
         z-index: 3;
-    
+
         .carousel_btn-prev, .carousel_btn-next {
           position: absolute;
           top: 0;
@@ -101,18 +101,18 @@
           background-color: transparent;
           z-index: 1000;
         }
-    
+
         .carousel_btn-prev {
           cursor: url('/images/PREV.png'), auto;
           left: 0;
         }
-    
+
         .carousel_btn-next {
           cursor: url('/images/NEXT.png'), auto;
           right: 0;
         }
       }
-  
+
       .carousel_subtitle {
         padding: 42px 0;
 
@@ -124,7 +124,7 @@
             line-height: 45px;
           }
         }
-    
+
         .carousel_accordion {
           .carousel_accordion_row {
             padding: 24px 0;

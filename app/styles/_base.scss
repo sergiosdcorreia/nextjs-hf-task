@@ -1,10 +1,5 @@
 @import 'variables.scss';
 
-.body {
-  background-color: $tx-tint;
-  font-family: 'Messina', sans-serif;
-}
-
 .section-container {
   height: 100vh;
   display: flex;
@@ -13,7 +8,7 @@
   padding: 122px 14px 14px 14px;
 
   .heading-1 {
-    font-family: "Messina", sans-serif;
+    font-family: "MessinaSansWeb", sans-serif;
     font-size: 49px;
     line-height: 47px;
     letter-spacing: -3px;
@@ -23,7 +18,7 @@
   .offerings {
 
     .offerings_title {
-      font-family: "Messina", sans-serif;
+      font-family: "MessinaSansWeb", sans-serif;
       font-size: 10px;
       line-height: 18px;
       color: $tx-brown;
@@ -31,7 +26,7 @@
     }
 
     .offerings_body {
-      font-family: "Messina", sans-serif;
+      font-family: "MessinaSansWeb", sans-serif;
       font-size: 17px;
       line-height: 19px;
       color: $tx-brown;
@@ -43,14 +38,14 @@
   padding: 72px 14px 0 14px;
 
   .newsletter_title {
-    font-family: "Messina", sans-serif;
+    font-family: "MessinaSansWeb", sans-serif;
     font-size: 10px;
     line-height: 18px;
     color: $tx-brown;
     text-transform: uppercase;
   }
   .newsletter_subtitle {
-    font-family: "Messina", sans-serif;
+    font-family: "MessinaSansWeb", sans-serif;
     font-size: 49px;
     line-height: 47px;
     letter-spacing: -3px;
@@ -60,7 +55,7 @@
   .newsletter_form {
 
     .newsletter_name, .newsletter_company, .newsletter_email {
-      font-family: "Messina", sans-serif;
+      font-family: "MessinaSansWeb", sans-serif;
       font-size: 49px;
       line-height: 40px;
       letter-spacing: -3px;
@@ -74,7 +69,7 @@
     }
 
     .newsletter_name::placeholder, .newsletter_company::placeholder, .newsletter_email::placeholder {
-      font-family: "Messina", sans-serif;
+      font-family: "MessinaSansWeb", sans-serif;
       font-size: 49px;
       line-height: 47px;
       letter-spacing: -3px;
@@ -83,7 +78,7 @@
     }
 
     .newsletter_btn {
-      font-family: "Messina", sans-serif;
+      font-family: "MessinaSansWeb", sans-serif;
       font-size: 17px;
       line-height: 19px;
       color: $tx-brown;
