@@ -19,10 +19,11 @@ export default function Carousel() {
     x: 0,
     y: 0
   });
-  const textRef = useRef();
-  const text2Ref = useRef();
+  const textPrevRef = useRef();
+  const textNextRef = useRef();
 
   useEffect(() => {
+    // Fetch carousel data from local JSON file
     const fetchData = async () => {
       try {
         const res = await fetch('/data/carousel.json');
@@ -36,6 +37,7 @@ export default function Carousel() {
     };
     fetchData();
 
+    // Carousel text cursor
     const manageMouseMove = (e) => {
       const { clientX, clientY } = e;
 
@@ -47,8 +49,8 @@ export default function Carousel() {
     };
 
     const moveText = (x, y) => {
-      gsap.set(textRef.current, {x, y, xPercent: -50, yPercent: -50})
-      gsap.set(text2Ref.current, {x, y, xPercent: -50, yPercent: -50})
+      gsap.set(textPrevRef.current, {x, y, xPercent: -50, yPercent: -50})
+      gsap.set(textNextRef.current, {x, y, xPercent: -50, yPercent: -50})
     };
 
     let ctx = gsap.context(() => {
@@ -61,30 +63,32 @@ export default function Carousel() {
     }
   }, []);
 
+  // Read more accordion
   const toggleReadMore = () => {
     setIsShowing(!isShowing);
   }
 
+  // Carousel overiding swipes with clicks
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev(); // Go to previous slide
     }
   };
-
   const handleNextClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext(); // Go to next slide
     }
   };
 
+  // Check if data is loaded
   if (!data || data.length === 0) {
     return <div>Loading...</div>;
   }
 
   return (
     <section className="carousel-section">
-      <div ref={textRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
-      <div ref={text2Ref} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
+      <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
+      <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
       <div className="carousel-container">
         <Swiper
           ref={swiperRef}

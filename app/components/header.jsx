@@ -47,7 +47,7 @@ export default function Header() {
           scrollTrigger: {
             trigger: headerRef.current,
             start: 'top 0',
-            end: isMobile ? 'bottom 100' : 'bottom 100',
+            end: 'bottom 100',
             scrub: true,
             pin: false,
             onUpdate: handleMenuEnablingWithThrottle,
