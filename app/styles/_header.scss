@@ -8,7 +8,6 @@
 }
 
 .logo_img {
-  transition: opacity var(--animation-timing);
   position: absolute;
   left: 14px;
   top: auto;
@@ -80,17 +79,6 @@
       width: 0;
     }
   }
-}
-
-.logo_img_sidebar {
-  transition: opacity var(--animation-timing);
-  position: absolute;
-  opacity: 0;
-  left: 14px;
-  top: 14px;
-  width: 80px;
-  height: 36px;
-  z-index: 20;
 }
 
 .sidebar {
@@ -175,20 +163,13 @@
     display: none;
   }
 
-  .logo_img_sidebar {
-    left: 40px;
-    top: 40px;
-    width: 168px;
-    height: 75px;
-    z-index: 20;
-  }
-
   .sidebar {
     translate: none;
     width: auto;
     min-height: auto;
     background-color: transparent;
     padding: 40px;
+    opacity: 0;
 
     .nav {
       display: grid;

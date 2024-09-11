@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -11,10 +11,12 @@ export default function Header() {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const logoRef = useRef(null);
-  const logoSidebarRef = useRef(null);
+  const asideRef = useRef(null);
   const checkboxRef = useRef(null);
   const handleChange = () => handleCheckboxChange();
   const timelineRef = useRef(null);
+  const [timelineProgress, setTimelineProgress] = useState(0);
+  // const [scrollY, setScrollY] = useState(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -53,16 +55,12 @@ export default function Header() {
             onUpdate: handleMenuEnablingWithThrottle,
             onLeave: () => {
               if (checkboxRef.current) {
-                logoRef.current.style.opacity = '0';
                 menuRef.current.style.opacity = '1';
-                logoSidebarRef.current.style.opacity = '1';
               }
             },
             onEnterBack: () => {
               if (checkboxRef.current) {
-                logoRef.current.style.opacity = '1';
                 menuRef.current.style.opacity = '';
-                logoSidebarRef.current.style.opacity = '0';
               }
             }
           },
@@ -82,8 +80,15 @@ export default function Header() {
           {
               opacity: 1
           },
-          0
+          0.3
         );
+        timelineRef.current.to(
+          asideRef.current,
+          {
+            opacity: 1
+          },
+          .5
+        )
       })
     });
 
@@ -105,19 +110,16 @@ export default function Header() {
       document.body.style.overflow = 'hidden';
       // Ensures the close button is visible
       menuRef.current.style.opacity = '1';
-      // Hide the logoRef
-      logoRef.current.style.opacity = '0';
-      // Show the logoSidebarRef
-      logoSidebarRef.current.style.opacity = '1';
-
-    } else if (!isChecked && timelineRef.current) {
-      // Hide logoSidebarRef
-      logoSidebarRef.current.style.opacity = '0';
-      // Show the logoRef again
-      logoRef.current.style.opacity = '1';
-      // Enable scrolling
-      document.body.style.overflow = '';
+      // Save timeline progress
+      setTimelineProgress(timelineRef.current.progress());
+      // Move the timeline progress to the end
+      timelineRef.current.progress(1);
     } else {
+      // Restore the timeline to its saved progress
+      timelineRef.current.progress(timelineProgress);
+      // Refresh ScrollTrigger and update
+      ScrollTrigger.refresh();
+      ScrollTrigger.update(true);
       // Enable scrolling
       document.body.style.overflow = '';
     }
@@ -135,18 +137,10 @@ export default function Header() {
         priority
       />
       <div className="topbar">
-        <Image
-          ref={logoSidebarRef}
-          className="logo_img_sidebar"
-          src="/images/txo_logo_2.svg"
-          alt="TXo Logo"
-          width={80}
-          height={36}
-        />
         <label ref={menuRef} className="hamburger-menu">
           <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
         </label>
-        <aside className="sidebar">
+        <aside ref={asideRef} className="sidebar">
           <nav className="nav">
             <div className="nav_section">
               <p className="nav_title">Enquires</p>
