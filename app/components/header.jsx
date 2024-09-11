@@ -16,25 +16,31 @@ export default function Header() {
   const handleChange = () => handleCheckboxChange();
   const timelineRef = useRef(null);
   const [timelineProgress, setTimelineProgress] = useState(0);
-  // const [scrollY, setScrollY] = useState(null);
+
+  const handleResize = () => {
+    if (timelineRef.current) {
+      // Adjust animations or refresh GSAP's calculations on window resize
+      ScrollTrigger.refresh();
+    }
+  };
+
+  const handleMenuEnabling = () => {
+    // Get hamburger opacity on mobile
+    const currentOpacity = parseFloat(window.getComputedStyle(menuRef.current).opacity);
+
+    // Enable hamburger functionality when opacity is equal or greater than 10%
+    if (currentOpacity >= 0.1) {
+      checkboxRef.current.disabled = false;
+    } else {
+      checkboxRef.current.disabled = true;
+    }
+  };
+
+  const handleMenuEnablingWithThrottle = throttle(handleMenuEnabling, 100);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
-
-      const handleMenuEnabling = () => {
-        // Get hamburger opacity on mobile
-        const currentOpacity = parseFloat(window.getComputedStyle(menuRef.current).opacity);
-
-        // Enable hamburger functionality when opacity is equal or greater than 10%
-        if (currentOpacity >= 0.1) {
-          checkboxRef.current.disabled = false;
-        } else {
-          checkboxRef.current.disabled = true;
-        }
-      };
-
-      const handleMenuEnablingWithThrottle = throttle(handleMenuEnabling, 100);
 
       let mediaQueries = gsap.matchMedia();
 
@@ -92,9 +98,11 @@ export default function Header() {
       })
     });
 
+    window.addEventListener('resize', handleResize);
     menuRef.current.addEventListener('change', handleChange);
     return () => {
       ctx.revert();
+      window.removeEventListener('resize', handleResize);
       if (menuRef.current) {
         menuRef.current.removeEventListener('change', handleChange);
         menuRef.current.style.opacity = '';
