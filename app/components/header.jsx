@@ -45,8 +45,8 @@ export default function Header() {
       let mediaQueries = gsap.matchMedia();
 
       mediaQueries.add({
-        isMobile: "(max-width: 959px)",
-        isDesktop: "(min-width: 960px)"
+        isMobile: "(max-width: 1279px)",
+        isDesktop: "(min-width: 1280px)"
       }, (context) => {
         let { isMobile, isDesktop } = context.conditions;
 

@@ -78,8 +78,26 @@
   }
 }
 
+@media only screen and (min-width: 768px) {
+  .carousel-section {
+    .carousel-container {
+      .carousel_subtitle {
+        .carousel_accordion {
+          .carousel_accordion_description {
+            display: flex;
+            justify-content: flex-end;
 
-@media only screen and (min-width: 960px) {
+            p {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
   .carousel-section {
     padding: 120px 40px 0 40px;
 
@@ -173,14 +191,11 @@
           }
 
           .carousel_accordion_description {
-            display: flex;
-            justify-content: flex-end;
             padding: 24px 0;
 
             p {
               font-size: 45px;
               line-height: 45px;
-              width: 50%;
             }
           }
         }

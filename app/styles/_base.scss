@@ -91,7 +91,41 @@
   }
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 768px) {
+  .section-container {
+    padding: 286px 40px 14px 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    box-sizing: border-box;
+  }
+
+  .heading-1 {
+    font-size: 144px;
+    line-height: 138px;
+    grid-column: span 4;
+    letter-spacing: -9px;
+  }
+
+  .offerings {
+    max-width: 862px;
+    grid-column: 3 / 5;
+    align-self: end;
+
+    .offerings_title {
+      font-size: 20px;
+      line-height: 18px;
+    }
+
+    .offerings_body {
+      font-size: 45px;
+      line-height: 45px;
+      margin-top: 24px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1280px) {
   .section-container {
     padding: 286px 40px 14px 40px;
     display: grid;
