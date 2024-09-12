@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .section-container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,6 +16,7 @@
   }
 
   .offerings {
+    margin-top: 120px;
 
     .offerings_title {
       font-family: "MessinaSansWeb", sans-serif;
