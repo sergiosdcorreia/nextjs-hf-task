@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import gsap from 'gsap';
+import LoadingCarousel from './loading/loadingCarousel';
 import 'swiper/scss';
 
 export default function Carousel() {
@@ -82,7 +83,7 @@ export default function Carousel() {
 
   // Check if data is loaded
   if (!data || data.length === 0) {
-    return <div>Loading...</div>;
+    return <LoadingCarousel />;
   }
 
   return (

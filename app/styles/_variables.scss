@@ -10,3 +10,17 @@ $tx-brown: #736357;
   --hamburger-height: calc(var(--bar-height) * 3 + var(hamburger-gap) * 2);
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
 }
+
+/* Animations */
+// Loading carousel animation
+@keyframes fade-opacity {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
