@@ -37,7 +37,7 @@ export default function Carousel() {
     };
     fetchData();
 
-    // Carousel text cursor
+    // Carousel text custom cursor
     const manageMouseMove = (e) => {
       const { clientX, clientY } = e;
 
@@ -59,7 +59,7 @@ export default function Carousel() {
 
     return () => {
       ctx.revert();
-      window.removeEventListener("mousemove", manageMouseMove)
+      window.removeEventListener("mousemove", manageMouseMove);
     }
   }, []);
 

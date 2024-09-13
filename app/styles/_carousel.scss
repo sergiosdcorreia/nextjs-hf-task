@@ -109,14 +109,14 @@
       width: 180px;
       height: 60px;
       pointer-events: none;
-      mix-blend-mode: difference;
+      mix-blend-mode: soft-light;
       z-index: 9999;
 
       &::before {
         content: "Previous";
         font-family: "Messina", sans-serif;
         font-size: 45px;
-        color: $tx-brown;
+        color: $tx-tint;
       }
     }
 
@@ -128,14 +128,14 @@
       width: 90px;
       height: 60px;
       pointer-events: none;
-      mix-blend-mode: difference;
+      mix-blend-mode: soft-light;
       z-index: 9999;
 
       &::before {
         content: "Next";
         font-family: "Messina", sans-serif;
         font-size: 45px;
-        color: $tx-brown;
+        color: $tx-tint;
       }
     }
 
@@ -204,6 +204,11 @@
           line-height: 45px;
           cursor: pointer;
           margin-top: 42px;
+          transition: opacity var(--animation-timing);
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
     }

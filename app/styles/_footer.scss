@@ -39,6 +39,12 @@
       margin-right: 0px;
       margin-left: 30px;
       justify-self: end;
+      opacity: 1;
+      transition: opacity var(--animation-timing);
+
+      &:hover {
+        opacity: .7;
+      }
     }
 
     a:nth-child(2) {
