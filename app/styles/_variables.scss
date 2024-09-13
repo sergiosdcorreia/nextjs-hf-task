@@ -7,6 +7,7 @@ $tx-brown: #736357;
   --bar-height: 1px;
   --hamburger-gap: 10px;
   --animation-timing: 200ms ease-in-out;
+  --animation-media-queries: 500ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(hamburger-gap) * 2);
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
 }

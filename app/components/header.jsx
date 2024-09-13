@@ -19,7 +19,7 @@ export default function Header() {
 
   const handleResize = () => {
     if (timelineRef.current) {
-      // Adjust animations or refresh GSAP's calculations on window resize
+      // Refresh GSAP's calculations on window resize
       ScrollTrigger.refresh();
     }
   };

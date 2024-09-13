@@ -29,6 +29,8 @@
           line-height: 13px;
           color: $tx-brown;
           width: 50%;
+          transition: font-size var(--animation-media-queries),
+          line-height var(--animation-media-queries);
         }
       }
 
@@ -48,17 +50,24 @@
             line-height: 13px;
             color: $tx-brown;
             width: 50%;
+            transition: font-size var(--animation-media-queries),
+            line-height var(--animation-media-queries);
           }
         }
 
         .carousel_accordion_description {
           border-bottom: 1px solid $tx-brown;
           padding: 14px 0;
+
           p {
             font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
             font-size: 10px;
             line-height: 13px;
             color: $tx-brown;
+            width: 100%;
+            transition: font-size var(--animation-media-queries),
+            line-height var(--animation-media-queries),
+            width var(--animation-media-queries);
           }
         }
 
@@ -75,7 +84,9 @@
       color: $tx-brown;
       cursor: pointer;
       opacity: .3;
-      transition: opacity var(--animation-timing);
+      transition: font-size var(--animation-media-queries),
+      line-height var(--animation-media-queries),
+      opacity var(--animation-timing);
 
       &:hover {
         opacity: 1;

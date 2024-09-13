@@ -7,6 +7,8 @@
     width: 81px;
     height: 100%;
     margin-bottom: 24px;
+    transition: width var(--animation-media-queries),
+    height var(--animation-media-queries);
   }
 
     
@@ -19,7 +21,10 @@
     color: $tx-brown;
     text-decoration: none;
     opacity: 1;
-    transition: opacity var(--animation-timing);
+    transition: opacity var(--animation-timing),
+    font-size var(--animation-media-queries),
+    line-height var(--animation-media-queries),
+    letter-spacing var(--animation-media-queries);
 
     &:hover {
       opacity: .7;

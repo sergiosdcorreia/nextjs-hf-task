@@ -41,7 +41,7 @@
     .loading_subtitle {
       gap: 40px;
       margin: 40px 0;
-  
+
       .loading_subtitle_name, .loading_subtitle_availability {
         height: 45px;
       }
@@ -52,17 +52,5 @@
       width: 225px;
       height: 45px;
     }
-  }
-}
-
-@keyframes fade-opacity {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.1;
   }
 }
