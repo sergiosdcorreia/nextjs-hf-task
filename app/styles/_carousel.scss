@@ -73,7 +73,13 @@
       background-color: transparent;
       padding: 0;
       color: $tx-brown;
+      cursor: pointer;
       opacity: .3;
+      transition: opacity var(--animation-timing);
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
@@ -202,13 +208,7 @@
         .carousel_btn-read-more {
           font-size: 45px;
           line-height: 45px;
-          cursor: pointer;
           margin-top: 42px;
-          transition: opacity var(--animation-timing);
-
-          &:hover {
-            opacity: 1;
-          }
         }
       }
     }

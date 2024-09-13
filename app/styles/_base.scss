@@ -87,6 +87,13 @@
       background-color: transparent;
       padding: 0;
       margin-top: 30px;
+      cursor: pointer;
+      opacity: 1;
+      transition: opacity var(--animation-timing);
+
+      &:hover {
+        opacity: .7;
+      }
     }
   }
 }
@@ -189,7 +196,6 @@
         font-size: 45px;
         line-height: 45px;
         margin-top: 90px;
-        cursor: pointer;
       }
     }
   }

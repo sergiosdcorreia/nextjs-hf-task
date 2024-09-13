@@ -127,6 +127,15 @@
           display: block;
           text-decoration: none;
         }
+
+        .nav_phone, .nav_email, .nav_phone-sm, .nav_email-sm, .nav_link {
+          opacity: 1;
+          transition: opacity var(--animation-timing);
+
+          &:hover {
+            opacity: .7;
+          }
+        }
       }
 
       .nav_content-sm {
@@ -205,15 +214,6 @@
             font-size: 16px;
             line-height: 18px;
             color: $tx-brown;
-          }
-
-          .nav_phone, .nav_email, .nav_phone-sm, .nav_email-sm, .nav_link {
-            opacity: 1;
-            transition: opacity var(--animation-timing);
-
-            &:hover {
-              opacity: .7;
-            }
           }
         }
         .nav_border {
