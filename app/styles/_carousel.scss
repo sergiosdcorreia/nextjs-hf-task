@@ -13,7 +13,7 @@
       display: none;
     }
 
-    .carousel_subtitle {
+    .carousel_caption {
       position: relative;
       padding: 14px 0;
       z-index: 4;
@@ -101,7 +101,7 @@
 @media only screen and (min-width: 768px) {
   .carousel {
     .carousel-container {
-      .carousel_subtitle {
+      .carousel_caption {
         .carousel_accordion {
           .carousel_accordion_description {
             display: flex;
@@ -189,7 +189,7 @@
         }
       }
 
-      .carousel_subtitle {
+      .carousel_caption {
         padding: 42px 0;
 
         .carousel_text-visible {
