@@ -177,8 +177,12 @@ export default function Header() {
               <p className="contact_title">Address</p>
               <li className="contact_content">
                 <p className="contact_subtitle">
-                  Morelands<br />
-                  5-23 Old Street<br />
+                  Morelands
+                </p>
+                <p className="contact_subtitle">
+                  5-23 Old Street
+                </p>
+                <p className="contact_subtitle">
                   London EC1V 9HL
                 </p>
               </li>

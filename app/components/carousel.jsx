@@ -82,7 +82,7 @@ export default function Carousel() {
   };
 
   return (
-    <section className="carousel-section">
+    <article className="carousel-section">
       { !data || data.length === 0 ? <LoadingCarousel /> : <>
       <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
       <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
@@ -142,6 +142,6 @@ export default function Carousel() {
       </div>
       </>
       }
-    </section>
+    </article>
   )
 }
