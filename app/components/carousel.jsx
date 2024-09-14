@@ -83,64 +83,65 @@ export default function Carousel() {
 
   return (
     <article className="carousel">
-      { !data || data.length === 0 ? <LoadingCarousel /> : <>
-      <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
-      <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
-      <div className="carousel-container">
-        <Swiper
-          ref={swiperRef}
-          spaceBetween={50}
-          slidesPerView={1}
-          pagination={{ clickable: true }}
-          navigation
-          onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
-        >
-          {data.map((item, index) => (
-            <SwiperSlide key={index}>
-              <Image
-                className="carousel_img"
-                src={item.image}
-                alt={item.title}
-                width={1940}
-                height={1176}
-              />
-            </SwiperSlide>
-          ))}
-          <div className="carousel_action-btns">
-            <button
-              onMouseEnter={() => {setIsPrevHovered(true)}}
-              onMouseLeave={() => {setIsPrevHovered(false)}}
-              className="carousel_btn-prev"
-              onClick={handlePrevClick}
-            ></button>
-            <button
-              onMouseEnter={() => {setIsNextHovered(true)}}
-              onMouseLeave={() => {setIsNextHovered(false)}}
-              className="carousel_btn-next"
-              onClick={handleNextClick}
-            ></button>
-          </div>
-        </Swiper>
-        <section className="carousel_subtitle">
-          <div className="carousel_text-visible">
-            <p>Name: {data[activeSlide].title}</p>
-            <p>Availability: {data[activeSlide].availability}</p>
-          </div>
-          <div style={{ height: isShowing ? accordionRef.current?.offsetHeight || 0 : "0" }} className="carousel_accordion">
-            <div ref={accordionRef}>
-              <div className="carousel_accordion_row">
-                <p>Location: {data[activeSlide].location}</p>
-                <p>Size: {data[activeSlide].size}</p>
+      { !data || data.length === 0 ? <LoadingCarousel /> :
+        <>
+          <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
+          <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
+          <div className="carousel-container">
+            <Swiper
+              ref={swiperRef}
+              spaceBetween={50}
+              slidesPerView={1}
+              pagination={{ clickable: true }}
+              navigation
+              onSlideChange={(swiper) => setActiveSlide(swiper.activeIndex)}
+            >
+              {data.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <Image
+                    className="carousel_img"
+                    src={item.image}
+                    alt={item.title}
+                    width={1940}
+                    height={1176}
+                  />
+                </SwiperSlide>
+              ))}
+              <div className="carousel_action-btns">
+                <button
+                  onMouseEnter={() => {setIsPrevHovered(true)}}
+                  onMouseLeave={() => {setIsPrevHovered(false)}}
+                  className="carousel_btn-prev"
+                  onClick={handlePrevClick}
+                ></button>
+                <button
+                  onMouseEnter={() => {setIsNextHovered(true)}}
+                  onMouseLeave={() => {setIsNextHovered(false)}}
+                  className="carousel_btn-next"
+                  onClick={handleNextClick}
+                ></button>
               </div>
-              <div className="carousel_accordion_description">
-                <p>{data[activeSlide].description}</p>
+            </Swiper>
+            <section className="carousel_subtitle">
+              <div className="carousel_text-visible">
+                <h3 className="carousel_title">Name: {data[activeSlide].title}</h3>
+                <p className="carousel_availability">Availability: {data[activeSlide].availability}</p>
               </div>
-            </div>
+              <div style={{ height: isShowing ? accordionRef.current?.offsetHeight || 0 : "0" }} className="carousel_accordion">
+                <div ref={accordionRef}>
+                  <div className="carousel_accordion_row">
+                    <p>Location: {data[activeSlide].location}</p>
+                    <p>Size: {data[activeSlide].size}</p>
+                  </div>
+                  <div className="carousel_accordion_description">
+                    <p>{data[activeSlide].description}</p>
+                  </div>
+                </div>
+              </div>
+              <button className="carousel_btn-read-more" type="button" onClick={toggleReadMore}>{isShowing ? 'Hide Text' : 'Read More'}</button>
+            </section>
           </div>
-          <button className="carousel_btn-read-more" type="button" onClick={toggleReadMore}>{isShowing ? 'Hide Text' : 'Read More'}</button>
-        </section>
-      </div>
-      </>
+        </>
       }
     </article>
   )
