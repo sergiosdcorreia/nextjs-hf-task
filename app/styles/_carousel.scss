@@ -1,4 +1,4 @@
-.carousel-section {
+.carousel {
   padding: 50px 14px 0 14px;
 
   .carousel-container {
@@ -22,6 +22,7 @@
         display: flex;
         border-bottom: 1px solid $tx-brown;
         padding-bottom: 14px;
+        gap: 14px;
 
         p {
           font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
@@ -43,6 +44,7 @@
           display: flex;
           border-bottom: 1px solid $tx-brown;
           padding: 14px 0;
+          gap: 14px;
 
           p {
             font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
@@ -96,7 +98,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .carousel-section {
+  .carousel {
     .carousel-container {
       .carousel_subtitle {
         .carousel_accordion {
@@ -106,6 +108,7 @@
 
             p {
               width: 50%;
+              padding-left: 7px;
             }
           }
         }
@@ -115,7 +118,7 @@
 }
 
 @media only screen and (min-width: 1280px) {
-  .carousel-section {
+  .carousel {
     padding: 120px 40px 0 40px;
 
     .carousel_cursor-prev {
@@ -190,6 +193,7 @@
 
         .carousel_text-visible {
           padding-bottom: 24px;
+          gap: 40px;
 
           p {
             font-size: 45px;
@@ -200,6 +204,7 @@
         .carousel_accordion {
           .carousel_accordion_row {
             padding: 24px 0;
+            gap: 40px;
 
             p {
               font-size: 45px;
@@ -213,6 +218,7 @@
             p {
               font-size: 45px;
               line-height: 45px;
+              padding-left: 20px;
             }
           }
         }

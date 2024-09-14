@@ -82,7 +82,7 @@ export default function Carousel() {
   };
 
   return (
-    <article className="carousel-section">
+    <article className="carousel">
       { !data || data.length === 0 ? <LoadingCarousel /> : <>
       <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
       <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
@@ -121,7 +121,7 @@ export default function Carousel() {
             ></button>
           </div>
         </Swiper>
-        <aside className="carousel_subtitle">
+        <section className="carousel_subtitle">
           <div className="carousel_text-visible">
             <p>Name: {data[activeSlide].title}</p>
             <p>Availability: {data[activeSlide].availability}</p>
@@ -138,7 +138,7 @@ export default function Carousel() {
             </div>
           </div>
           <button className="carousel_btn-read-more" type="button" onClick={toggleReadMore}>{isShowing ? 'Hide Text' : 'Read More'}</button>
-        </aside>
+        </section>
       </div>
       </>
       }
