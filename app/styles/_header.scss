@@ -91,44 +91,47 @@
   background-color: $tx-tint;
   z-index: 200;
 
-  .nav {
+  .contact {
     padding: 16px;
 
-    .nav_section {
+    .contact_section {
       border-top: 1px solid $tx-brown;
       padding: 14px 0;
+      margin: 0;
 
-      .nav_title {
+      .contact_title {
         font-family: "MessinaSansWeb", sans-serif;
         font-size: 10px;
         line-height: 18px;
         color: $tx-brown;
         text-transform: uppercase;
+        margin-bottom: 14px;
       }
 
-      .nav_content {
-        padding-top: 14px;
+      .contact_content {
+        padding: 0px;
+        list-style: none;
 
-        .nav_subtitle, .nav_phone, .nav_email, .nav_link {
+        .contact_subtitle, .contact_phone, .contact_email, .contact_link {
           font-family: "MessinaSansWeb", sans-serif;
           font-size: 17px;
           line-height: 19px;
           color: $tx-brown;
         }
 
-        .nav_subtitle-sm, .nav_phone-sm, .nav_email-sm {
+        .contact_subtitle-sm, .contact_phone-sm, .contact_email-sm {
           font-family: "MessinaSansWeb", sans-serif;
           font-size: 15px;
           line-height: 16px;
           color: $tx-brown;
         }
 
-        .nav_phone, .nav_phone-sm, .nav_email, .nav_email-sm, .nav_link {
+        .contact_phone, .contact_phone-sm, .contact_email, .contact_email-sm, .contact_link {
           display: block;
           text-decoration: none;
         }
 
-        .nav_phone, .nav_email, .nav_phone-sm, .nav_email-sm, .nav_link {
+        .contact_phone, .contact_email, .contact_phone-sm, .contact_email-sm, .contact_link {
           opacity: 1;
           transition: opacity var(--animation-timing);
 
@@ -138,17 +141,17 @@
         }
       }
 
-      .nav_content-sm {
+      .contact_content-sm {
         padding: 0;
       }
 
-      .nav_border {
+      .contact_border {
         padding-top: 14px;
         border-bottom: 1px solid $tx-brown;
       }
     }
 
-    .nav_section-sm {
+    .contact_section-sm {
       border: none;
     }
   }
@@ -179,7 +182,7 @@
     padding: 40px;
     opacity: 0;
 
-    .nav {
+    .contact {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: 86px;
@@ -187,48 +190,48 @@
       padding: 0;
       width: 100%;
 
-      .nav_section {
+      .contact_section {
         border: none;
         padding: 0;
         padding-left: 40px;
 
-        .nav_title {
+        .contact_title {
           font-size: 16px;
           width: fit-content;
         }
 
-        .nav_content-sm {
+        .contact_content-sm {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
         }
 
-        .nav_content {
+        .contact_content {
 
-          .nav_subtitle, .nav_phone, .nav_email, .nav_link {
+          .contact_subtitle, .contact_phone, .contact_email, .contact_link {
             font-size: 16px;
             line-height: 18px;
           }
 
-          .nav_subtitle-sm, .nav_phone-sm, .nav_email-sm {
+          .contact_subtitle-sm, .contact_phone-sm, .contact_email-sm {
             font-size: 16px;
             line-height: 18px;
             color: $tx-brown;
           }
         }
-        .nav_border {
+        .contact_border {
           border: none;
         }
       }
 
-      .nav_section-sm {
+      .contact_section-sm {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
       }
     }
 
-    .nav div:nth-child(1) {
+    .contact ul:nth-child(1) {
       grid-column: 2;
     }
   }
@@ -236,17 +239,17 @@
 
 @media only screen and (min-width: 1600px) {
   .sidebar {
-    .nav {
+    .contact {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: 86px;
 
-      .nav_section {
+      .contact_section {
         padding: 0;
       }
     }
 
-    .nav div:nth-child(1) {
+    .contact div:nth-child(1) {
       grid-column: 5;
     }
   }

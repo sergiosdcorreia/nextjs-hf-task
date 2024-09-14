@@ -144,55 +144,67 @@ export default function Header() {
         height={266}
         priority
       />
-      <div className="topbar">
-        <label ref={menuRef} className="hamburger-menu">
+      <section className="topbar">
+        <label ref={menuRef} className="hamburger-menu" aria-label="contacts-button">
           <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
         </label>
-        <aside ref={asideRef} className="sidebar">
-          <nav className="nav">
-            <div className="nav_section">
-              <p className="nav_title">Enquires</p>
-              <div className="nav_content">
-                <p className="nav_subtitle">General</p>
-                <a className="nav_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-                <a className="nav_email" href="mailto:info@txowork.com">info@txowork.com</a>
-              </div>
-            </div>
-            <div className="nav_section nav_section-sm">
-              <div className="nav_content nav_content-sm">
-                <p className="nav_subtitle-sm">Sales</p>
-                <a className="nav_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-                <a className="nav_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
-              </div>
-            </div>
-            <div className="nav_section">
-              <p className="nav_title">Address</p>
-              <div className="nav_content">
-                <p className="nav_subtitle">
+        <aside ref={asideRef} className="sidebar" aria-label="contacts">
+          <div className="contact">
+            <ul className="contact_section">
+              <p className="contact_title">Enquires</p>
+              <li className="contact_content">
+                <p className="contact_subtitle">General</p>
+              </li>
+              <li className="contact_content">
+                <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+              </li>
+              <li className="contact_content">
+                <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
+              </li>
+            </ul>
+            <ul className="contact_section contact_section-sm">
+              <li className="contact_content contact_content-sm">
+                <p className="contact_subtitle-sm">Sales</p>
+              </li>
+              <li className="contact_content contact_content-sm">
+                <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+              </li>
+              <li className="contact_content contact_content-sm">
+                <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
+              </li>
+            </ul>
+            <ul className="contact_section">
+              <p className="contact_title">Address</p>
+              <li className="contact_content">
+                <p className="contact_subtitle">
                   Morelands<br />
                   5-23 Old Street<br />
                   London EC1V 9HL
                 </p>
-              </div>
-            </div>
-            <div className="nav_section">
-              <p className="nav_title">Contact</p>
-              <div className="nav_content">
-                <a className="nav_link" href="#" target="_blank">
+              </li>
+            </ul>
+            <ul className="contact_section">
+              <p className="contact_title">Contact</p>
+              <li className="contact_content">
+                <a className="contact_link" href="#" target="_blank">
                   Instagram
                 </a>
-                <a className="nav_link" href="#" target="_blank">
+              </li>
+              <li className="contact_content">
+                <a className="contact_link" href="#" target="_blank">
                   LinkedIn
                 </a>
-                <a className="nav_link" href="#" target="_blank">
+              </li>
+              <li className="contact_content">
+                <a className="contact_link" href="#" target="_blank">
                   Facebook
                 </a>
-              </div>
-              <div className="nav_border"></div>
-            </div>
-          </nav>
+              </li>
+              <div className="contact_border" />
+            </ul>
+          </div>
         </aside>
-      </div>
+      </section>
     </header>
   );
 }

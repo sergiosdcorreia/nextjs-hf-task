@@ -1,56 +1,46 @@
-.loading-carousel {
+.loading_image {
+  background-color: $tx-brown;
+  aspect-ratio: 1.65;
   width: 100%;
-  height: 100%;
-  padding: 50px 14px 14px 14px;
+  opacity: .1;
+  animation: fade-opacity 1500ms ease-in-out infinite;
+}
 
-  .loading_image {
+.loading_subtitle {
+  display: flex;
+  gap: 14px;
+  margin: 14px 0;
+
+  .loading_subtitle_name, .loading_subtitle_availability {
     background-color: $tx-brown;
-    aspect-ratio: 1.65;
-    width: 100%;
-    opacity: .1;
-    animation: fade-opacity 1500ms ease-in-out infinite;
-  }
-
-  .loading_subtitle {
-    display: flex;
-    gap: 14px;
-    margin: 14px 0;
-
-    .loading_subtitle_name, .loading_subtitle_availability {
-      background-color: $tx-brown;
-      height: 13px;
-      width: 50%;
-      opacity: .1;
-      animation: fade-opacity 1500ms ease-in-out infinite;
-    }
-  }
-
-  .loading_btn {
-    background-color: $tx-brown;
-    width: 50px;
-    height: 18px;
+    height: 13px;
+    width: 50%;
     opacity: .1;
     animation: fade-opacity 1500ms ease-in-out infinite;
   }
 }
 
+.loading_btn {
+  background-color: $tx-brown;
+  width: 50px;
+  height: 18px;
+  opacity: .1;
+  animation: fade-opacity 1500ms ease-in-out infinite;
+}
+
 @media only screen and (min-width: 1280px) {
-  .loading-carousel {
-    padding: 120px 40px 40px 40px;
+  .loading_subtitle {
+    gap: 40px;
+    margin: 40px 0;
 
-    .loading_subtitle {
-      gap: 40px;
-      margin: 40px 0;
-
-      .loading_subtitle_name, .loading_subtitle_availability {
-        height: 45px;
-      }
-    }
-
-    .loading_btn {
-      margin-top: 40px;
-      width: 225px;
+    .loading_subtitle_name, .loading_subtitle_availability {
       height: 45px;
     }
+  }
+
+  .loading_btn {
+    margin-top: 40px;
+    width: 225px;
+    height: 45px;
   }
 }

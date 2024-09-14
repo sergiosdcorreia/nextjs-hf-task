@@ -12,10 +12,10 @@ export default function Home() {
 			</section>
       <Carousel />
       <section className="newsletter-section">
-        <h3 className="newsletter_title">
+        <h2 className="newsletter_title">
           Stay Updated
-        </h3>
-        <h2 className="newsletter_subtitle">Newsletter</h2>
+        </h2>
+        <p className="newsletter_subtitle">Newsletter</p>
         <form className="newsletter_form">
           <input className="newsletter_name" type="text" name="Full Name" placeholder="Full Name" />
           <input className="newsletter_company" type="text" name="Company Name" placeholder="Company Name" />

@@ -81,13 +81,9 @@ export default function Carousel() {
     }
   };
 
-  // Check if data is loaded
-  if (!data || data.length === 0) {
-    return <LoadingCarousel />;
-  }
-
   return (
     <section className="carousel-section">
+      { !data || data.length === 0 ? <LoadingCarousel /> : <>
       <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
       <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
       <div className="carousel-container">
@@ -144,6 +140,8 @@ export default function Carousel() {
           <button className="carousel_btn-read-more" type="button" onClick={toggleReadMore}>{isShowing ? 'Hide Text' : 'Read More'}</button>
         </aside>
       </div>
+      </>
+      }
     </section>
   )
 }
