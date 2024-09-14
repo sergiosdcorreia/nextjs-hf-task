@@ -108,6 +108,14 @@
         margin-bottom: 14px;
       }
 
+      ul {
+        padding: 0;
+      }
+
+      h4, h5 {
+        font-weight: 400;
+      }
+
       .contact_content {
         padding: 0px;
         list-style: none;
@@ -123,6 +131,7 @@
           font-family: "MessinaSansWeb", sans-serif;
           font-size: 15px;
           line-height: 16px;
+          font-weight: 400;
           color: $tx-brown;
         }
 
@@ -140,6 +149,7 @@
           }
         }
       }
+
 
       .contact_content-sm {
         padding: 0;
@@ -231,7 +241,7 @@
       }
     }
 
-    .contact ul:nth-child(1) {
+    .contact section:nth-child(1) {
       grid-column: 2;
     }
   }
@@ -249,7 +259,7 @@
       }
     }
 
-    .contact div:nth-child(1) {
+    .contact section:nth-child(1) {
       grid-column: 5;
     }
   }

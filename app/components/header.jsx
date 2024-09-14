@@ -150,32 +150,36 @@ export default function Header() {
         </label>
         <aside ref={asideRef} className="sidebar" aria-label="contacts">
           <div className="contact">
-            <ul className="contact_section">
-              <p className="contact_title">Enquires</p>
-              <li className="contact_content">
-                <p className="contact_subtitle">General</p>
-              </li>
-              <li className="contact_content">
-                <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-              </li>
-              <li className="contact_content">
-                <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
-              </li>
-            </ul>
-            <ul className="contact_section contact_section-sm">
-              <li className="contact_content contact_content-sm">
-                <p className="contact_subtitle-sm">Sales</p>
-              </li>
-              <li className="contact_content contact_content-sm">
-                <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-              </li>
-              <li className="contact_content contact_content-sm">
-                <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
-              </li>
-            </ul>
-            <ul className="contact_section">
-              <p className="contact_title">Address</p>
-              <li className="contact_content">
+            <section className="contact_section">
+              <h4 className="contact_title">Enquires</h4>
+              <div className="contact_content">
+                <h5 className="contact_subtitle">General</h5>
+              </div>
+              <ul>
+                <li className="contact_content">
+                  <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                </li>
+                <li className="contact_content">
+                  <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
+                </li>
+              </ul>
+            </section>
+            <section className="contact_section contact_section-sm">
+              <div className="contact_content contact_content-sm">
+                <h5 className="contact_subtitle-sm">Sales</h5>
+              </div>
+              <ul>
+                <li className="contact_content contact_content-sm">
+                  <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                </li>
+                <li className="contact_content contact_content-sm">
+                  <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
+                </li>
+              </ul>
+            </section>
+            <section className="contact_section">
+              <h4 className="contact_title">Address</h4>
+              <div className="contact_content">
                 <p className="contact_subtitle">
                   Morelands
                 </p>
@@ -185,27 +189,29 @@ export default function Header() {
                 <p className="contact_subtitle">
                   London EC1V 9HL
                 </p>
-              </li>
-            </ul>
-            <ul className="contact_section">
-              <p className="contact_title">Contact</p>
-              <li className="contact_content">
-                <a className="contact_link" href="#" target="_blank">
-                  Instagram
-                </a>
-              </li>
-              <li className="contact_content">
-                <a className="contact_link" href="#" target="_blank">
-                  LinkedIn
-                </a>
-              </li>
-              <li className="contact_content">
-                <a className="contact_link" href="#" target="_blank">
-                  Facebook
-                </a>
-              </li>
+              </div>
+            </section>
+            <section className="contact_section">
+              <h4 className="contact_title">Contact</h4>
+              <ul>
+                <li className="contact_content">
+                  <a className="contact_link" href="#" target="_blank">
+                    Instagram
+                  </a>
+                </li>
+                <li className="contact_content">
+                  <a className="contact_link" href="#" target="_blank">
+                    LinkedIn
+                  </a>
+                </li>
+                <li className="contact_content">
+                  <a className="contact_link" href="#" target="_blank">
+                    Facebook
+                  </a>
+                </li>
+              </ul>
               <div className="contact_border" />
-            </ul>
+            </section>
           </div>
         </aside>
       </section>
