@@ -11,7 +11,7 @@ export default function Carousel() {
   const [data, setData] = useState([]);
   const [activeSlide, setActiveSlide] = useState(0);
   const [isShowing, setIsShowing] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [isPrevHovered, setIsPrevHovered] = useState(false);
   const [isNextHovered, setIsNextHovered] = useState(false);
   const swiperRef = useRef(null);
@@ -30,10 +30,10 @@ export default function Carousel() {
         const res = await fetch('/data/carousel.json');
         const result = await res.json();
         setData(result);
-        setLoading(false);
+        setIsLoading(false);
       } catch (error) {
         console.error('Failed to load carousel data:', error);
-        setLoading(false);
+        setIsLoading(false);
       }
     };
     fetchData();
@@ -69,23 +69,23 @@ export default function Carousel() {
     setIsShowing(!isShowing);
   }
 
-  // Carousel overiding swipes with clicks
+  // Carousel overiding swipes with clicks for desktop
   const handlePrevClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev(); // Go to previous slide
+      swiperRef.current.swiper.slidePrev();
     }
   };
   const handleNextClick = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext(); // Go to next slide
+      swiperRef.current.swiper.slideNext();
     }
   };
 
   return (
     <article className="carousel">
-      { !data || data.length === 0 ? <LoadingCarousel /> :
+      { isLoading ? <LoadingCarousel /> :
         <>
-          <h3 className="article_title">{data[activeSlide].title}</h3>
+          <h2 className="article_title">{data[activeSlide].title}</h2>
           <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
           <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
           <figure className="carousel-container">
