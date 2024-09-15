@@ -144,38 +144,38 @@ export default function Header() {
         height={266}
         priority
       />
-      <section className="topbar">
-        <label ref={menuRef} className="hamburger-menu" aria-label="contacts-button">
+      <div className="topbar">
+        <label ref={menuRef} className="hamburger-menu" aria-label="contacts button">
           <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
         </label>
-        <aside ref={asideRef} className="sidebar" aria-label="contacts">
+        <aside ref={asideRef} className="sidebar" aria-label="enquires and contacts">
           <div className="contact">
-            <section className="contact_section">
-              <h4 className="contact_title">Enquires</h4>
-              <div className="contact_content">
-                <h5 className="contact_subtitle">General</h5>
+            <section className="contact_section grid-section">
+              <div>
+                <h4 className="contact_title">Enquires</h4>
+                <section className="contact_content">
+                  <h5 className="contact_subtitle">General</h5>
+                  <ul>
+                    <li className="contact_content">
+                      <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                    </li>
+                    <li className="contact_content">
+                      <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
+                    </li>
+                  </ul>
+                </section>
               </div>
-              <ul>
-                <li className="contact_content">
-                  <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-                </li>
-                <li className="contact_content">
-                  <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
-                </li>
-              </ul>
-            </section>
-            <section className="contact_section contact_section-sm">
-              <div className="contact_content contact_content-sm">
+              <section className="contact_section contact_section-sm">
                 <h5 className="contact_subtitle-sm">Sales</h5>
-              </div>
-              <ul>
-                <li className="contact_content contact_content-sm">
-                  <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
-                </li>
-                <li className="contact_content contact_content-sm">
-                  <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
-                </li>
-              </ul>
+                <ul>
+                  <li className="contact_content contact_content-sm">
+                    <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                  </li>
+                  <li className="contact_content contact_content-sm">
+                    <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
+                  </li>
+                </ul>
+              </section>
             </section>
             <section className="contact_section">
               <h4 className="contact_title">Address</h4>
@@ -214,7 +214,7 @@ export default function Header() {
             </section>
           </div>
         </aside>
-      </section>
+      </div>
     </header>
   );
 }
