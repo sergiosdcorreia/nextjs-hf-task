@@ -5,10 +5,10 @@ export default function Home() {
     <main>
 			<section className="section-container">
 				<h1 className="heading-1">We&apos;re hands-on and commited to evolving your business to strive for better.</h1>
-        <aside className="offerings">
+        <div className="offerings">
           <h2 className="offerings_title">Our offering</h2>
           <p className="offerings_body">We provide physical, pragmatic and personal business guidance. Success is never static. Neither are we. We&apos;ll be your business partners for positive change.</p>
-        </aside>
+        </div>
 			</section>
       <Carousel />
       <section className="newsletter-section">
