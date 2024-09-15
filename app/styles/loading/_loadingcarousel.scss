@@ -8,12 +8,12 @@
 
 .loading_subtitle {
   display: flex;
-  gap: 14px;
-  margin: 14px 0;
+  gap: .875em;
+  margin: .875em 0;
 
   .loading_subtitle_name, .loading_subtitle_availability {
     background-color: $tx-brown;
-    height: 13px;
+    height: .8125em;
     width: 50%;
     opacity: .1;
     animation: fade-opacity 1500ms ease-in-out infinite;
@@ -22,25 +22,25 @@
 
 .loading_btn {
   background-color: $tx-brown;
-  width: 50px;
-  height: 18px;
+  width: 3.125em;
+  height: 1.125em;
   opacity: .1;
   animation: fade-opacity 1500ms ease-in-out infinite;
 }
 
 @media only screen and (min-width: 1280px) {
   .loading_subtitle {
-    gap: 40px;
-    margin: 40px 0;
+    gap: 2.5em;
+    margin: 2.5em 0;
 
     .loading_subtitle_name, .loading_subtitle_availability {
-      height: 45px;
+      height: 2.8125em;
     }
   }
 
   .loading_btn {
-    margin-top: 40px;
-    width: 225px;
-    height: 45px;
+    margin-top: 2.5em;
+    width: 14.0625em;
+    height: 2.8125em;
   }
 }
