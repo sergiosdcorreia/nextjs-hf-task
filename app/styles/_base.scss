@@ -1,6 +1,6 @@
 @import 'variables.scss';
 
-.section-container {
+.hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   padding: 7.625em .875em .875em .875em;
   transition: height var(--animation-media-queries);
 
-  .heading-1 {
+  .hero_title {
     font-family: "MessinaSansWeb", sans-serif;
     font-size: 3.0625em;
     line-height: .9591836734693877em;
@@ -19,10 +19,10 @@
                 letter-spacing var(--animation-media-queries);
   }
 
-  .offerings {
+  .hero_offerings {
     margin-top: 7.5em;
 
-    .offerings_title {
+    .hero_offerings_title {
       font-family: "MessinaSansWeb", sans-serif;
       font-size: .625em;
       line-height: 1.125em;
@@ -32,7 +32,7 @@
                   line-height var(--animation-media-queries);
     }
 
-    .offerings_body {
+    .hero_offerings_body {
       font-family: "MessinaSansWeb", sans-serif;
       font-size: 1.0625em;
       line-height: 1.1875em;
@@ -120,7 +120,7 @@
 }
 
 @media only screen and (min-width: 48em) {
-  .section-container {
+  .hero {
     padding: 17.875em 2.5em .875em 2.5em;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -128,47 +128,47 @@
     box-sizing: border-box;
   }
 
-  .heading-1 {
+  .hero_title {
     grid-column: span 4;
   }
 
-  .offerings {
+  .hero_offerings {
     max-width: 53.875em;
     grid-column: 3 / 5;
     align-self: end;
 
-    .offerings_body {
+    .hero_offerings_body {
       margin-top: 1.5em;
     }
   }
 }
 
 @media only screen and (min-width: 80em) {
-  .section-container {
+  .hero {
     padding: 17.875em 2.5em .875em 2.5em;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 1.25em;
     box-sizing: border-box;
 
-    .heading-1 {
+    .hero_title {
       font-size: 9em;
       line-height: .9583333333333334em;
       grid-column: span 7;
       letter-spacing: -.0625em;
     }
 
-    .offerings {
+    .hero_offerings {
       max-width: 53.875em;
       grid-column: 4 / 8;
       align-self: end;
 
-      .offerings_title {
+      .hero_offerings_title {
         font-size: 1.25em;
         line-height: 1.125em;
       }
 
-      .offerings_body {
+      .hero_offerings_body {
         font-size:  2.8125em;
         line-height:  1em;
         margin-top: .5333333333333333em;
