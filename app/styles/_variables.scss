@@ -3,9 +3,9 @@ $tx-brown: #736357;
 
 /* Hamburger Variables */
 :root {
-  --bar-width: 30px;
-  --bar-height: 1px;
-  --hamburger-gap: 10px;
+  --bar-width: 1.875em;
+  --bar-height: .0625em;
+  --hamburger-gap: .625em;
   --animation-timing: 200ms ease-in-out;
   --animation-media-queries: 500ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(hamburger-gap) * 2);

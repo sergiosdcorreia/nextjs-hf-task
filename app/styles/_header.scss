@@ -9,31 +9,31 @@
 
 .logo_img {
   position: absolute;
-  left: 14px;
+  left: .8750em;
   top: auto;
-  bottom: 30px;
-  width: 230px;
-  height: 103px;
+  bottom: 1.875em;
+  width: 14.375em;
+  height: 6.4375em;
   z-index: 9999;
 }
 
 .topbar {
   position: fixed;
   background-color: $tx-tint;
-  height: 63px;
+  height: 3.9375em;
   width: 100%;
   z-index: 5;
 }
 
 .hamburger-menu {
   position: absolute;
-  top: 20px;
-  right: 15px;
+  top: 1.25em;
+  right: .875em;
   opacity: 0;
   display: flex;
   flex-direction: column;
   gap: var(--hamburger-gap);
-  width: 30px;
+  width: 1.875em;
   user-select: none;
   transform-origin: left center;
   cursor: pointer;
@@ -50,17 +50,17 @@
   &:has(input:focus-visible)::before,
   &:has(input:focus-visible)::after,
   input:focus-visible {
-    border:1px solid $tx-brown;
+    border:.0625em solid $tx-brown;
   }
 
   &:has(input:checked)::before {
     rotate: 45deg;
-    translate: 0 10.5px;
+    translate: 0 .65625em;
   }
 
   &:has(input:checked)::after {
     rotate: -45deg;
-    translate: 0 -11.5px;
+    translate: 0 -.71875em;
   }
 
   &:has(input:checked) + .sidebar {
@@ -92,20 +92,20 @@
   z-index: 200;
 
   .contact {
-    padding: 16px;
+    padding: 1em;
 
     .contact_section {
-      border-top: 1px solid $tx-brown;
-      padding: 14px 0;
+      border-top: .0625em solid $tx-brown;
+      padding: .875em 0;
       margin: 0;
 
       .contact_title {
         font-family: "MessinaSansWeb", sans-serif;
-        font-size: 10px;
-        line-height: 18px;
+        font-size: .625em;
+        line-height: 1.125em;
         color: $tx-brown;
         text-transform: uppercase;
-        margin-bottom: 14px;
+        margin-bottom: .875em;
       }
 
       ul {
@@ -117,20 +117,20 @@
       }
 
       .contact_content {
-        padding: 0px;
+        padding: 0;
         list-style: none;
 
         .contact_subtitle, .contact_phone, .contact_email, .contact_link {
           font-family: "MessinaSansWeb", sans-serif;
-          font-size: 17px;
-          line-height: 19px;
+          font-size: 1.0625em;
+          line-height: 1.1875em;
           color: $tx-brown;
         }
 
         .contact_subtitle-sm, .contact_phone-sm, .contact_email-sm {
           font-family: "MessinaSansWeb", sans-serif;
-          font-size: 15px;
-          line-height: 16px;
+          font-size: .9375em;
+          line-height: 1em;
           font-weight: 400;
           color: $tx-brown;
         }
@@ -156,8 +156,8 @@
       }
 
       .contact_border {
-        padding-top: 14px;
-        border-bottom: 1px solid $tx-brown;
+        padding-top: .875em;
+        border-bottom: .0625em solid $tx-brown;
       }
     }
 
@@ -167,17 +167,17 @@
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 80em) {
   .logo_img {
-    left: 40px;
+    left: 2.5em;
     top: auto;
-    bottom: 80px;
-    width: 600px;
-    height: 266px;
+    bottom: 5em;
+    width: 37.5em;
+    height: 16.625em;
   }
 
   .topbar {
-    height: 156px;
+    height: 9.75em;
   }
 
   .hamburger-menu {
@@ -189,24 +189,24 @@
     width: auto;
     min-height: auto;
     background-color: transparent;
-    padding: 40px;
+    padding: 2.5em;
     opacity: 0;
 
     .contact {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: 86px;
-      gap: 20px;
+      grid-template-rows: 5.375em;
+      gap: 1.25em;
       padding: 0;
       width: 100%;
 
       .contact_section {
         border: none;
         padding: 0;
-        padding-left: 40px;
+        padding-left: 2.5em;
 
         .contact_title {
-          font-size: 16px;
+          font-size: 1em;
           width: fit-content;
         }
 
@@ -219,13 +219,13 @@
         .contact_content {
 
           .contact_subtitle, .contact_phone, .contact_email, .contact_link {
-            font-size: 16px;
-            line-height: 18px;
+            font-size: 1em;
+            line-height: 1.125em;
           }
 
           .contact_subtitle-sm, .contact_phone-sm, .contact_email-sm {
-            font-size: 16px;
-            line-height: 18px;
+            font-size: 1em;
+            line-height: 1.125em;
             color: $tx-brown;
           }
         }
@@ -247,12 +247,12 @@
   }
 }
 
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 100em) {
   .sidebar {
     .contact {
       display: grid;
       grid-template-columns: repeat(8, 1fr);
-      grid-template-rows: 86px;
+      grid-template-rows: 5.375em;
 
       .contact_section {
         padding: 0;
