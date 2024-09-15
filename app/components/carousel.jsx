@@ -85,6 +85,7 @@ export default function Carousel() {
     <article className="carousel">
       { !data || data.length === 0 ? <LoadingCarousel /> :
         <>
+          <h3 className="article_title">{data[activeSlide].title}</h3>
           <div ref={textPrevRef} style={{ opacity: isPrevHovered ? '1' : '0' }} className="carousel_cursor-prev" />
           <div ref={textNextRef} style={{ opacity: isNextHovered ? '1' : '0' }} className="carousel_cursor-next" />
           <figure className="carousel-container">
@@ -124,7 +125,7 @@ export default function Carousel() {
             </Swiper>
             <figcaption className="carousel_caption">
               <div className="carousel_text-visible">
-                <h3 className="carousel_title">Name: {data[activeSlide].title}</h3>
+                <p className="carousel_title">Name: {data[activeSlide].title}</p>
                 <p className="carousel_availability">Availability: {data[activeSlide].availability}</p>
               </div>
               <div style={{ height: isShowing ? accordionRef.current?.offsetHeight || 0 : "0" }} className="carousel_accordion">

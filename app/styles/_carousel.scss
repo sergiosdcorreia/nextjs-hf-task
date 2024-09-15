@@ -1,6 +1,10 @@
 .carousel {
   padding: 50px 14px 0 14px;
 
+  .article_title {
+    display: none;
+  }
+
   .carousel-container {
     position: relative;
 
@@ -24,7 +28,7 @@
         padding-bottom: 14px;
         gap: 14px;
 
-        .carousel_title, .carousel_availability {
+        p {
           font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
           font-size: 10px;
           font-weight: 400;
