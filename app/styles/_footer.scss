@@ -1,23 +1,22 @@
 @import "variables.scss";
 
 .footer {
-  padding: 90px 14px 20px 14px;
+  padding: 5.625em .875em 1.25em .875em;
 
   .footer_img {
-    width: 81px;
+    width: 5.0625em;
     height: 100%;
-    margin-bottom: 24px;
+    margin-bottom: 1.5em;
     transition: width var(--animation-media-queries),
     height var(--animation-media-queries);
   }
 
-    
   a {
     font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
-    font-size: 8px;
-    line-height: 18px;
-    letter-spacing: -.1px;
-    margin-right: 30px;
+    font-size: .5em;
+    line-height: 1.125em;
+    letter-spacing: -.00625em;
+    margin-right: 3.75em;
     color: $tx-brown;
     text-decoration: none;
     opacity: 1;
@@ -32,33 +31,42 @@
   }
 }
 
-@media only screen and (min-width: 960px) {
+// Min width 960px
+@media only screen and (min-width: 60em) {
   .footer {
-    margin-top: 400px;
-    padding: 40px;
+    margin-top: 25em;
+    padding: .875em;
 
     .footer_img {
-      width: 166px;
-      height: 30px;
-      margin-bottom: 40px;
+      width: 10.375em;
+      height: 1.875em;
+      margin-bottom: 2.5em;
     }
 
     a {
-      font-size: 16px;
-      line-height: 18px;
-      padding: 5px 10px;
-      margin-right: 0px;
-      margin-left: 30px;
+      font-size: 1em;
+      line-height: 1.125em;
+      padding: .3125em .625em;
+      margin-right: 0;
+      margin-left: 1.875em;
       justify-self: end;
     }
 
     a:nth-child(2) {
-      margin: 0px;
+      margin: 0;
     }
   }
 }
 
-@media only screen and (min-width: 1320px) {
+// Min width 1280px
+@media only screen and (min-width: 80em) {
+  .footer {
+    padding: 2.5em;
+  }
+}
+
+// Min width 1320px
+@media only screen and (min-width: 82.5em) {
   .footer {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -70,13 +78,13 @@
     a {
       justify-self: start;
       margin: 0;
-      margin-right: 30px;
+      margin-right: 1.875em;
     }
 
     a:nth-child(2) {
       grid-column: 4 / span 2;
       justify-self: end;
-      margin-right: 30px;
+      margin-right: 1.875em;
     }
     a:nth-child(3) {
       grid-column: 6;
@@ -90,7 +98,8 @@
   }
 }
 
-@media only screen and (min-width: 1800px) {
+// Min width 1800px
+@media only screen and (min-width: 112.5em) {
   .footer {
     a:nth-child(2) {
       grid-column: 5;
