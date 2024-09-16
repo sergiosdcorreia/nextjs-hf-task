@@ -1,5 +1,5 @@
 .carousel {
-  padding: 50px 14px 0 14px;
+  padding: 3.125em .875em 0 .875em;
 
   .article_title {
     display: none;
@@ -19,20 +19,19 @@
 
     .carousel_caption {
       position: relative;
-      padding: 14px 0;
+      padding: .875em 0;
       z-index: 4;
 
       .carousel_text-visible {
         display: flex;
-        border-bottom: 1px solid $tx-brown;
-        padding-bottom: 14px;
-        gap: 14px;
+        border-bottom: .0625em solid $tx-brown;
+        padding-bottom: .875em;
+        gap: .875em;
 
         p {
           font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
-          font-size: 10px;
-          font-weight: 400;
-          line-height: 13px;
+          font-size: .625em;
+          line-height: 1.3em;
           color: $tx-brown;
           width: 50%;
           transition: font-size var(--animation-media-queries),
@@ -47,14 +46,14 @@
 
         .carousel_accordion_row {
           display: flex;
-          border-bottom: 1px solid $tx-brown;
-          padding: 14px 0;
-          gap: 14px;
+          border-bottom: .0625em solid $tx-brown;
+          padding: .875em 0;
+          gap: .875em;
 
           p {
             font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            line-height: 13px;
+            font-size: .625em;
+            line-height: 1.3em;
             color: $tx-brown;
             width: 50%;
             transition: font-size var(--animation-media-queries),
@@ -63,13 +62,13 @@
         }
 
         .carousel_accordion_description {
-          border-bottom: 1px solid $tx-brown;
-          padding: 14px 0;
+          border-bottom: .0625em solid $tx-brown;
+          padding: .875em 0;
 
           p {
             font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
-            font-size: 10px;
-            line-height: 13px;
+            font-size: .625em;
+            line-height: 1.3em;
             color: $tx-brown;
             width: 100%;
             transition: font-size var(--animation-media-queries),
@@ -83,8 +82,8 @@
 
     .carousel_btn-read-more {
       font-family: "MessinaSansWeb", Arial, Helvetica, sans-serif;
-      font-size: 10px;
-      line-height: 18px;
+      font-size: .625em;
+      line-height: 1.8em;
       border: none;
       background-color: transparent;
       padding: 0;
@@ -102,7 +101,8 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+// Min-width 768px
+@media only screen and (min-width: 48em) {
   .carousel {
     .carousel-container {
       .carousel_caption {
@@ -113,7 +113,7 @@
 
             p {
               width: 50%;
-              padding-left: 7px;
+              padding-left: .4375em;
             }
           }
         }
@@ -122,17 +122,18 @@
   }
 }
 
-@media only screen and (min-width: 1280px) {
+// Min width 1280px
+@media only screen and (min-width: 80em) {
   .carousel {
-    padding: 120px 40px 0 40px;
+    padding: 7.5em 2.5em 0 2.5em;
 
     .carousel_cursor-prev {
       position: fixed;
       top: 0;
       left: 0;
       opacity: 0;
-      width: 180px;
-      height: 60px;
+      width: 11.25em;
+      height: 3.75em;
       pointer-events: none;
       mix-blend-mode: soft-light;
       z-index: 9999;
@@ -140,7 +141,7 @@
       &::before {
         content: "Previous";
         font-family: "Messina", sans-serif;
-        font-size: 45px;
+        font-size: 2.8125em;
         color: $tx-tint;
       }
     }
@@ -150,8 +151,8 @@
       top: 0;
       left: 0;
       opacity: 0;
-      width: 90px;
-      height: 60px;
+      width: 5.625em;
+      height: 3.75em;
       pointer-events: none;
       mix-blend-mode: soft-light;
       z-index: 9999;
@@ -159,7 +160,7 @@
       &::before {
         content: "Next";
         font-family: "Messina", sans-serif;
-        font-size: 45px;
+        font-size: 2.8125em;
         color: $tx-tint;
       }
     }
@@ -194,43 +195,43 @@
       }
 
       .carousel_caption {
-        padding: 42px 0;
+        padding: 2.625em 0;
 
         .carousel_text-visible {
-          padding-bottom: 24px;
-          gap: 40px;
+          padding-bottom: 1.5em;
+          gap: 2.5em;
 
           .carousel_title, .carousel_availability {
-            font-size: 45px;
-            line-height: 45px;
+            font-size: 2.8125em;
+            line-height: 1em;
           }
         }
 
         .carousel_accordion {
           .carousel_accordion_row {
-            padding: 24px 0;
-            gap: 40px;
+            padding: 1.5em 0;
+            gap: 2.5em;
 
             p {
-              font-size: 45px;
-              line-height: 45px;
+              font-size: 2.8125em;
+              line-height: 1em;
             }
           }
 
           .carousel_accordion_description {
-            padding: 24px 0;
+            padding: 1.5em 0;
 
             p {
-              font-size: 45px;
-              line-height: 45px;
-              padding-left: 20px;
+              font-size: 2.8125em;
+              line-height: 1em;
+              padding-left: .4444444444444444em;
             }
           }
         }
         .carousel_btn-read-more {
-          font-size: 45px;
-          line-height: 45px;
-          margin-top: 42px;
+          font-size: 2.8125em;
+          line-height: 1em;
+          margin-top: .9333333333333333em;
         }
       }
     }

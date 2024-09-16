@@ -56,9 +56,13 @@
     isolation: isolate;
   }
 
-  // Remove unordered lists padding
+  // Remove unordered lists padding and list bullets
   ul {
     padding: 0;
+
+    li {
+      list-style: none;
+    }
   }
 
   // Remove font weight from headings
