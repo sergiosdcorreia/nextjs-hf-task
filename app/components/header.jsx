@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -13,7 +13,6 @@ export default function Header() {
   const logoRef = useRef(null);
   const asideRef = useRef(null);
   const checkboxRef = useRef(null);
-  const handleChange = () => handleCheckboxChange();
   const timelineRef = useRef(null);
   const [timelineProgress, setTimelineProgress] = useState(0);
 
@@ -36,9 +35,36 @@ export default function Header() {
     }
   };
 
+  const handleCheckboxChange = useCallback(() => {
+    const isChecked = checkboxRef.current.checked;
+  
+    if (isChecked && menuRef.current) {
+      // Prevent scrolling when menu is open
+      document.body.style.overflow = 'hidden';
+      // Ensure the close button is visible
+      menuRef.current.style.opacity = '1';
+      // Save timeline progress
+      setTimelineProgress(timelineRef.current.progress());
+      // Move timeline progress to the end
+      timelineRef.current.progress(1);
+    } else {
+      // Restore the timeline to saved progress
+      timelineRef.current.progress(timelineProgress);
+      // Refresh and update ScrollTrigger
+      ScrollTrigger.refresh();
+      ScrollTrigger.update(true);
+      // Enable scrolling
+      document.body.style.overflow = '';
+    }
+  }, [timelineProgress]);
+
+  const handleChange = useCallback(() => handleCheckboxChange(), [handleCheckboxChange]);
+
   const handleMenuEnablingWithThrottle = throttle(handleMenuEnabling, 100);
 
   useEffect(() => {
+    const menuRefCurrent = menuRef.current;
+
     let ctx = gsap.context(() => {
       gsap.registerPlugin(ScrollTrigger);
 
@@ -61,12 +87,12 @@ export default function Header() {
             onUpdate: handleMenuEnablingWithThrottle,
             onLeave: () => {
               if (checkboxRef.current) {
-                menuRef.current.style.opacity = '1';
+                menuRefCurrent.style.opacity = '1';
               }
             },
             onEnterBack: () => {
               if (checkboxRef.current) {
-                menuRef.current.style.opacity = '';
+                menuRefCurrent.style.opacity = '';
               }
             }
           },
@@ -82,7 +108,7 @@ export default function Header() {
           0
         );
         timelineRef.current.to(
-          menuRef.current,
+          menuRefCurrent,
           {
               opacity: 1
           },
@@ -99,39 +125,16 @@ export default function Header() {
     });
 
     window.addEventListener('resize', handleResize);
-    menuRef.current.addEventListener('change', handleChange);
+    menuRefCurrent.addEventListener('change', handleChange);
     return () => {
       ctx.revert();
       window.removeEventListener('resize', handleResize);
-      if (menuRef.current) {
-        menuRef.current.removeEventListener('change', handleChange);
-        menuRef.current.style.opacity = '';
+      if (menuRefCurrent) {
+        menuRefCurrent.removeEventListener('change', handleChange);
+        menuRefCurrent.style.opacity = '';
       }
     };
-  }, []);
-
-  const handleCheckboxChange = () => {
-    const isChecked = checkboxRef.current.checked;
-
-    if (isChecked && menuRef.current) {
-      // Prevents the user from scrolling when the menu is open
-      document.body.style.overflow = 'hidden';
-      // Ensures the close button is visible
-      menuRef.current.style.opacity = '1';
-      // Save timeline progress
-      setTimelineProgress(timelineRef.current.progress());
-      // Move the timeline progress to the end
-      timelineRef.current.progress(1);
-    } else {
-      // Restore the timeline to its saved progress
-      timelineRef.current.progress(timelineProgress);
-      // Refresh ScrollTrigger and update
-      ScrollTrigger.refresh();
-      ScrollTrigger.update(true);
-      // Enable scrolling
-      document.body.style.overflow = '';
-    }
-  };
+  }, [handleChange, handleMenuEnablingWithThrottle]);
 
   return (
     <header ref={headerRef} className="header">
