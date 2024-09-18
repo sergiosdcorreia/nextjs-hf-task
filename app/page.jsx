@@ -6,40 +6,45 @@ import Carousel from './components/carousel';
 
 export default function Home() {
   const heroRef = useRef(null);
-  const mediaQuery1 = window.matchMedia('(min-width: 768px)');
-  const mediaQuery2 = window.matchMedia('(min-width: 1280px)');
+  const mediaQuery1 = useRef();
+  const mediaQuery2 = useRef();
 
 useEffect(() => {
-  if (heroRef.current) {
-    const { forceGridAnimation } = wrapGrid(heroRef.current, {
-      duration: 500,
-      easing: 'easeInOut',
-    });
+  if (typeof window !== 'undefined') {
+    mediaQuery1.current = window.matchMedia('(min-width: 48em)');
+    mediaQuery2.current = window.matchMedia('(min-width: 80em)');
 
-    const handleMediaQueryChange = () => {
-      if (heroRef.current) {
-        heroRef.current.style.gridTemplateColumns = mediaQuery1.matches
-          ? mediaQuery2.matches
-            ? 'repeat(8, 1fr)'
-            : 'repeat(5, 1fr)'
-          : '1fr';
-        
-        forceGridAnimation()
-        heroRef.current.offsetHeight;
-      }
-    };
+    if (heroRef.current) {
+      const { forceGridAnimation } = wrapGrid(heroRef.current, {
+        duration: 500,
+        easing: 'easeInOut',
+      });
 
-    // Set initial grid layout based on media query
-    handleMediaQueryChange();
+      const handleMediaQueryChange = () => {
+        if (heroRef.current) {
+          heroRef.current.style.gridTemplateColumns = mediaQuery1.matches
+            ? mediaQuery2.matches
+              ? 'repeat(8, 1fr)'
+              : 'repeat(5, 1fr)'
+            : '1fr';
+          
+          forceGridAnimation()
+          heroRef.current.offsetHeight;
+        }
+      };
 
-    mediaQuery1.addEventListener('change', handleMediaQueryChange);
-    mediaQuery2.addEventListener('change', handleMediaQueryChange);
+      // Set initial grid layout based on media query
+      handleMediaQueryChange();
 
-    return () => {
-      // Cleanup media query listeners
-      mediaQuery1.removeEventListener('change', handleMediaQueryChange);
-      mediaQuery2.removeEventListener('change', handleMediaQueryChange);
-    };
+      mediaQuery1.current.addEventListener('change', handleMediaQueryChange);
+      mediaQuery2.current.addEventListener('change', handleMediaQueryChange);
+
+      return () => {
+        // Cleanup media query listeners
+        mediaQuery1.current.removeEventListener('change', handleMediaQueryChange);
+        mediaQuery2.current.removeEventListener('change', handleMediaQueryChange);
+      };
+    }
   }
 }, [mediaQuery1, mediaQuery2]);
 
