@@ -2,11 +2,18 @@
 
 .hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
   padding: 7.625em .875em .875em .875em;
-  transition: height var(--animation-media-queries);
+  transition: height var(--animation-media-queries), 
+              grid-template-columns var(--animation-media-queries);
+
+  .hero_title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   .hero_title {
     font-family: "MessinaSansWeb", sans-serif;
@@ -18,6 +25,12 @@
     transition: font-size var(--animation-media-queries),
                 line-height var(--animation-media-queries),
                 letter-spacing var(--animation-media-queries);
+  }
+
+  .hero_offerings-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero_offerings {
@@ -127,19 +140,24 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 1.25em;
     box-sizing: border-box;
-  }
 
-  .hero_title {
-    grid-column: span 4;
-  }
+    .hero_title-container {
+      align-self: center;
+      grid-column: span 4;
+    }
+  
+    .hero_offerings-container {
+      grid-column: 3 / 5;
+      align-self: end;
 
-  .hero_offerings {
-    max-width: 53.875em;
-    grid-column: 3 / 5;
-    align-self: end;
-
-    .hero_offerings_body {
-      margin-top: 1.5em;
+      .hero_offerings {
+        max-width: 53.875em;
+        
+    
+        .hero_offerings_body {
+          margin-top: 1.5em;
+        }
+      }
     }
   }
 }
@@ -152,27 +170,32 @@
     gap: 1.25em;
     box-sizing: border-box;
 
-    .hero_title {
-      font-size: 9em;
-      line-height: .9583333333333334em;
+    .hero_title-container {
       grid-column: span 7;
-      letter-spacing: -.0625em;
+
+      .hero_title {
+        font-size: 9em;
+        line-height: .9583333333333334em;
+        letter-spacing: -.0625em;
+      }
     }
 
-    .hero_offerings {
-      max-width: 53.875em;
+    .hero_offerings-container {
       grid-column: 4 / 8;
       align-self: end;
-
-      .hero_offerings_title {
-        font-size: 1.25em;
-        line-height: 1.125em;
-      }
-
-      .hero_offerings_body {
-        font-size:  2.8125em;
-        line-height:  1em;
-        margin-top: .5333333333333333em;
+      max-width: 53.875em;
+      
+      .hero_offerings {
+        .hero_offerings_title {
+          font-size: 1.25em;
+          line-height: 1.125em;
+        }
+  
+        .hero_offerings_body {
+          font-size:  2.8125em;
+          line-height:  1em;
+          margin-top: .5333333333333333em;
+        }
       }
     }
   }

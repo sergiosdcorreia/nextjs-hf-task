@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
+    "animate-css-grid": "^1.5.1",
     "gsap": "^3.12.5",
     "lodash": "^4.17.21",
     "next": "14.2.7",
