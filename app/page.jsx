@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useRef, useEffect } from "react";
-import { wrapGrid } from "animate-css-grid";
-import Carousel from "./components/carousel";
+import { useRef, useEffect } from 'react';
+import { wrapGrid } from 'animate-css-grid';
+import Carousel from './components/carousel';
 
 export default function Home() {
   const heroRef = useRef(null);
@@ -17,7 +17,6 @@ useEffect(() => {
     });
 
     const handleMediaQueryChange = () => {
-      console.log('Media query changed!')
       if (heroRef.current) {
         heroRef.current.style.gridTemplateColumns = mediaQuery1.matches
           ? mediaQuery2.matches
