@@ -31,11 +31,18 @@
   }
 }
 
-// Min width 960px
-@media only screen and (min-width: 60em) {
+// Tablet screens
+@media only screen and (min-width: 48em) and (max-width: 79.9375em) {
+  .footer {
+    font-size: 1.8em;
+  }
+}
+
+// Min width 1280px
+@media only screen and (min-width: 80em) {
   .footer {
     margin-top: 25em;
-    padding: .875em;
+    padding: 2.5em;
 
     .footer_img {
       width: 10.375em;
@@ -55,13 +62,6 @@
     a:nth-child(2) {
       margin: 0;
     }
-  }
-}
-
-// Min width 1280px
-@media only screen and (min-width: 80em) {
-  .footer {
-    padding: 2.5em;
   }
 }
 
