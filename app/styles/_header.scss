@@ -93,6 +93,7 @@
 
   .contact {
     padding: 1em;
+    width: 100%;
 
     .contact_section {
       border-top: .0625em solid $tx-brown;
@@ -142,7 +143,6 @@
         }
       }
 
-
       .contact_content-sm {
         padding: 0;
       }
@@ -155,7 +155,14 @@
 
     .contact_section-sm {
       border: none;
+      padding-bottom: 0;
     }
+  }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 79.9375em) {
+  .sidebar {
+    font-size: 1.8em;
   }
 }
 
