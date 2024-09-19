@@ -122,6 +122,12 @@
   }
 }
 
+@media only screen and (min-width: 48em) and (max-width: 79.9375em) {
+  .carousel {
+    font-size: 1.8em;
+  }
+}
+
 // Min width 1280px
 @media only screen and (min-width: 80em) {
   .carousel {
