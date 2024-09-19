@@ -162,6 +162,12 @@
   }
 }
 
+@media only screen and (min-width: 48em) and (max-width: 79.9375em) {
+  .hero, .newsletter-section {
+    font-size: 1.8em;
+  }
+}
+
 @media only screen and (min-width: 80em) {
   .hero {
     padding: 17.875em 2.5em .875em 2.5em;
