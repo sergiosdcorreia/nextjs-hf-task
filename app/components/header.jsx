@@ -71,10 +71,11 @@ export default function Header() {
       let mediaQueries = gsap.matchMedia();
 
       mediaQueries.add({
-        isMobile: "(max-width: 1279px)",
-        isDesktop: "(min-width: 1280px)"
+        isMobile: "(max-width: 47.9375em)",
+        isTablet: "(min-width: 48em) and (max-width: 79.9375em)",
+        isDesktop: "(min-width: 80em)"
       }, (context) => {
-        let { isMobile, isDesktop } = context.conditions;
+        let { isMobile, isTablet, isDesktop } = context.conditions;
 
         timelineRef.current = gsap.timeline({
           defaults: { duration: 1 },
@@ -100,7 +101,7 @@ export default function Header() {
         timelineRef.current.to(
           logoRef.current,
           {
-            top: isMobile ? '14px' : '40px',
+            top: isMobile ? '14px' : isTablet ? '20px' : '40px',
             width: isMobile ? '80px' : '168px',
             height: isMobile ? '36px' : '75px',
             position: 'fixed'
