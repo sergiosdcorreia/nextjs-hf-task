@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import throttle from 'lodash/throttle';
+import { ReactLenis } from 'lenis/react';
 
 export default function Header() {
 
@@ -41,6 +42,7 @@ export default function Header() {
     if (isChecked && menuRef.current) {
       // Prevent scrolling when menu is open
       document.body.style.overflow = 'hidden';
+      ScrollTrigger.getAll().forEach(trigger => trigger.disable(true));
       // Ensure the close button is visible
       menuRef.current.style.opacity = '1';
       // Save timeline progress
@@ -48,13 +50,14 @@ export default function Header() {
       // Move timeline progress to the end
       timelineRef.current.progress(1);
     } else {
-      // Restore the timeline to saved progress
+      // Enable scrolling
+      document.body.style.overflow = '';
+      ScrollTrigger.getAll().forEach(trigger => trigger.enable(true));
+      // Only restore timeline progress if the checkbox is unchecked
       timelineRef.current.progress(timelineProgress);
       // Refresh and update ScrollTrigger
       ScrollTrigger.refresh();
       ScrollTrigger.update(true);
-      // Enable scrolling
-      document.body.style.overflow = '';
     }
   }, [timelineProgress]);
 
@@ -126,99 +129,99 @@ export default function Header() {
     });
 
     window.addEventListener('resize', handleResize);
-    menuRefCurrent.addEventListener('change', handleChange);
     return () => {
       ctx.revert();
       window.removeEventListener('resize', handleResize);
       if (menuRefCurrent) {
-        menuRefCurrent.removeEventListener('change', handleChange);
         menuRefCurrent.style.opacity = '';
       }
     };
   }, [handleChange, handleMenuEnablingWithThrottle]);
 
   return (
-    <header ref={headerRef} className="header">
-      <Image
-        ref={logoRef}
-        className="logo_img"
-        src="/images/txo_logo_2.svg"
-        alt="TXo Logo"
-        width={600}
-        height={266}
-        priority
-      />
-      <div className="topbar">
-        <label ref={menuRef} className="hamburger-menu" aria-label="contacts button">
-          <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
-        </label>
-        <aside ref={asideRef} className="sidebar" aria-label="enquires and contacts">
-          <div className="contact">
-            <section className="contact_section grid-section">
-              <div>
-                <h4 className="contact_title">Enquires</h4>
-                <section className="contact_content">
-                  <h5 className="contact_subtitle">General</h5>
+    <ReactLenis root>
+      <header ref={headerRef} className="header">
+        <Image
+          ref={logoRef}
+          className="logo_img"
+          src="/images/txo_logo_2.svg"
+          alt="TXo Logo"
+          width={600}
+          height={266}
+          priority
+        />
+        <div className="topbar">
+          <label ref={menuRef} className="hamburger-menu" aria-label="contacts button">
+            <input ref={checkboxRef} type="checkbox" disabled onChange={handleCheckboxChange} />
+          </label>
+          <aside ref={asideRef} className="sidebar" aria-label="enquires and contacts">
+            <div className="contact">
+              <section className="contact_section grid-section">
+                <div>
+                  <h4 className="contact_title">Enquires</h4>
+                  <section className="contact_content">
+                    <h5 className="contact_subtitle">General</h5>
+                    <ul>
+                      <li className="contact_content">
+                        <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                      </li>
+                      <li className="contact_content">
+                        <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+                <section className="contact_section contact_section-sm">
+                  <h5 className="contact_subtitle-sm">Sales</h5>
                   <ul>
-                    <li className="contact_content">
-                      <a className="contact_phone" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                    <li className="contact_content contact_content-sm">
+                      <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
                     </li>
-                    <li className="contact_content">
-                      <a className="contact_email" href="mailto:info@txowork.com">info@txowork.com</a>
+                    <li className="contact_content contact_content-sm">
+                      <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
                     </li>
                   </ul>
                 </section>
-              </div>
-              <section className="contact_section contact_section-sm">
-                <h5 className="contact_subtitle-sm">Sales</h5>
+              </section>
+              <section className="contact_section">
+                <h4 className="contact_title">Address</h4>
+                <div className="contact_content">
+                  <p className="contact_subtitle">
+                    Morelands
+                  </p>
+                  <p className="contact_subtitle">
+                    5-23 Old Street
+                  </p>
+                  <p className="contact_subtitle">
+                    London EC1V 9HL
+                  </p>
+                </div>
+              </section>
+              <section className="contact_section">
+                <h4 className="contact_title">Contact</h4>
                 <ul>
-                  <li className="contact_content contact_content-sm">
-                    <a className="contact_phone-sm" href="tel:+4402036134733">+44 (0) 020 3613 4733</a>
+                  <li className="contact_content">
+                    <a className="contact_link" href="#" target="_blank">
+                      Instagram
+                    </a>
                   </li>
-                  <li className="contact_content contact_content-sm">
-                    <a className="contact_email-sm" href="mailto:info@txowork.com">info@txowork.com</a>
+                  <li className="contact_content">
+                    <a className="contact_link" href="#" target="_blank">
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li className="contact_content">
+                    <a className="contact_link" href="#" target="_blank">
+                      Facebook
+                    </a>
                   </li>
                 </ul>
+                <div className="contact_border" />
               </section>
-            </section>
-            <section className="contact_section">
-              <h4 className="contact_title">Address</h4>
-              <div className="contact_content">
-                <p className="contact_subtitle">
-                  Morelands
-                </p>
-                <p className="contact_subtitle">
-                  5-23 Old Street
-                </p>
-                <p className="contact_subtitle">
-                  London EC1V 9HL
-                </p>
-              </div>
-            </section>
-            <section className="contact_section">
-              <h4 className="contact_title">Contact</h4>
-              <ul>
-                <li className="contact_content">
-                  <a className="contact_link" href="#" target="_blank">
-                    Instagram
-                  </a>
-                </li>
-                <li className="contact_content">
-                  <a className="contact_link" href="#" target="_blank">
-                    LinkedIn
-                  </a>
-                </li>
-                <li className="contact_content">
-                  <a className="contact_link" href="#" target="_blank">
-                    Facebook
-                  </a>
-                </li>
-              </ul>
-              <div className="contact_border" />
-            </section>
-          </div>
-        </aside>
-      </div>
-    </header>
+            </div>
+          </aside>
+        </div>
+      </header>
+    </ReactLenis>
   );
 }
